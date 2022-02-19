@@ -42,6 +42,10 @@ const colors = {
         normal: '#95EAD2',
         obesity: '#FCE9D9',
         severeObesity: '#FCD4D7'
+    },
+    extra: {
+        white: '#ffffff',
+        black: '#000000'
     }
 }
 
