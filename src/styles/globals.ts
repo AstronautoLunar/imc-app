@@ -45,7 +45,9 @@ const colors = {
     },
     extra: {
         white: '#ffffff',
-        black: '#000000'
+        black: '#000000',
+        grayDark: '#4F4F4F',
+        gray: '#C4C4C4'
     }
 }
 
