@@ -1,16 +1,68 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     View,
     Text,
-    TextInput, 
+    TextInput,
     TouchableOpacity
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { colors } from '../../styles/globals';
 
+import { colors } from '../../styles/globals';
 import styles from './styles';
+import { useResult } from '../../contexts/result';
+import { ValueStateInputsTypes } from '../../types';
 
 const Form = () => {
+    const {
+        result,
+        setResult
+    } = useResult();
+
+    const [
+        value,
+        setValue
+    ] = useState({
+        weight: 0,
+        height: 0
+    } as ValueStateInputsTypes);
+
+    function changeInputWeight(entry: string) {
+        setValue({ ...value, weight: Number(entry)});
+    }
+
+    function changeInputHeight(entry: string) {
+        setValue({ ...value, height: Number(entry)});
+    }
+
+    function calculateIMC() {
+        const { height, weight } = value;
+
+        const total = (weight * weight) / height;
+
+        if(total < 18.5) {
+            setResult({
+                ...result,
+                total,
+                type: "under-weight"
+            });
+            
+        } else if(total >= 18.5 && total < 25) {
+            setResult({
+                ...result,
+                total,
+                type: "normal"
+            });
+            
+        } else if(total >= 25 && total < 30) {
+            // setResult({
+            //     ...result,
+            //     total,
+            //     type: ""
+            // });
+
+        }
+    }
+
     return (
         <View style={styles.area}>
             <View
@@ -22,9 +74,11 @@ const Form = () => {
                     color={colors.extra.black}
                     style={styles.icon}
                 />
-                <TextInput 
+                <TextInput
                     style={styles.input}
                     placeholder="Peso"
+                    keyboardType="numeric"
+                    onChangeText={changeInputWeight}
                 />
             </View>
             <View
@@ -36,9 +90,11 @@ const Form = () => {
                     color={colors.extra.black}
                     style={styles.icon}
                 />
-                <TextInput 
+                <TextInput
                     style={styles.input}
                     placeholder="Altura"
+                    keyboardType="numeric"
+                    onChangeText={changeInputHeight}
                 />
             </View>
             <TouchableOpacity
