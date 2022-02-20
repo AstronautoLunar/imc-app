@@ -12,28 +12,36 @@ const styles = StyleSheet.create({
     },
     areaInput: {
         width: '100%',
-        height: 46,
+        padding: 8,
         marginBottom: 24,
         backgroundColor: colors.extra.gray,
-        borderRadius: 10
+        borderRadius: 10,
+        flexDirection: "row",
+        alignItems: 'center'
+    },
+    icon: {
+        paddingRight: 8
     },
     input: {
         flex: 1,
         height: '100%',
+        fontSize: 16
     },
     pressAreaButton: {
         width: '100%',
     },
     button: {
         width: '100%',
-        height: 46,
+        padding: 8,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: colors.extra.gray,
+        backgroundColor: colors.extra.purpleBlue,
         borderRadius: 10
     },
     text: {
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontSize: 24,
+        color: colors.extra.white
     }
 });
 
