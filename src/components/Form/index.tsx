@@ -9,60 +9,20 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import { colors } from '../../styles/globals';
 import styles from './styles';
-import { useResult } from '../../contexts/result';
-import { ValueStateInputsTypes } from '../../types';
+// import { useResult } from '../../contexts/result';
 
-const Form = () => {
-    const {
-        result,
-        setResult
-    } = useResult();
+interface FormProps {
+    changeInputWeight: (entry: string) => void; 
+    changeInputHeight: (entry: string) => void;
+    calculateIMC: () => void;
+}
 
-    const [
-        value,
-        setValue
-    ] = useState({
-        weight: 0,
-        height: 0
-    } as ValueStateInputsTypes);
-
-    function changeInputWeight(entry: string) {
-        setValue({ ...value, weight: Number(entry)});
-    }
-
-    function changeInputHeight(entry: string) {
-        setValue({ ...value, height: Number(entry)});
-    }
-
-    function calculateIMC() {
-        const { height, weight } = value;
-
-        const total = (weight * weight) / height;
-
-        if(total < 18.5) {
-            setResult({
-                ...result,
-                total,
-                type: "under-weight"
-            });
-            
-        } else if(total >= 18.5 && total < 25) {
-            setResult({
-                ...result,
-                total,
-                type: "normal"
-            });
-            
-        } else if(total >= 25 && total < 30) {
-            // setResult({
-            //     ...result,
-            //     total,
-            //     type: ""
-            // });
-
-        }
-    }
-
+const Form = ({ 
+    changeInputWeight, 
+    changeInputHeight, 
+    calculateIMC 
+}: FormProps) => {
+    
     return (
         <View style={styles.area}>
             <View
@@ -99,6 +59,7 @@ const Form = () => {
             </View>
             <TouchableOpacity
                 style={styles.pressAreaButton}
+                onPress={calculateIMC}
             >
                 <View style={styles.button}>
                     <Text style={styles.text}>

@@ -10,7 +10,7 @@ import {
     ResultValueProvider
 } from "../types";
 
-const ResultContext = createContext({} as ResultValueProvider);
+export const ResultContext = createContext({} as ResultValueProvider);
 
 export const ResultProvider = ({ children }: ResultProviderProps) => {
     let [ result, setResult ] = useState({

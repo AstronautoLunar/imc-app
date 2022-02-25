@@ -4,9 +4,18 @@ export type ResultValueProvider = {
 }
 
 export type ResultStateTypes = {
-    total: string | null;
+    total: TotalTypes;
     type: TypesThemeResult;
 }
+
+type TotalTypes = 
+    number 
+    | 
+    string 
+    | 
+    null 
+    | 
+    undefined; 
 
 type TypesThemeResult = 
     'under-weight'
