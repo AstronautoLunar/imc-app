@@ -1,3 +1,5 @@
+import { TypesThemeResult } from "./ResultContextTypes";
+
 export type ThemeStateContextTypes = {
     colorText: string;
     backgroundInterface: string;
@@ -13,6 +15,7 @@ export type ThemeProviderProps = {
 export type ThemeProviderValuesTypes = {
     theme: ThemeStateContextTypes;
     setTheme: setThemeTypes;
+    applyThemeResult: (result: TypesThemeResult) => void;
 }
 
 type setThemeTypes = React.Dispatch<React.SetStateAction<ThemeStateContextTypes>>;

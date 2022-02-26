@@ -1,8 +1,4 @@
 import React from "react"
-import {
-  Switch,
-  View
-} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 import { 
