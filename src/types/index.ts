@@ -4,9 +4,11 @@ import { ResultProps } from "./ResultComponentTypes";
 import { 
     ResultStateTypes,
     ResultProviderProps,
-    ResultValueProvider
+    ResultValueProvider,
+    TypesThemeResult
 } from "./ResultContextTypes";
 import { ValueStateInputsTypes } from "./FormTypes";
+import { ConvertTypeInBRReturnTypes } from "./ConvertTypeInBRTypes";
 
 export {
     TitleProps,
@@ -15,5 +17,7 @@ export {
     ResultStateTypes,
     ResultProviderProps,
     ResultValueProvider,
-    ValueStateInputsTypes
+    ValueStateInputsTypes,
+    TypesThemeResult,
+    ConvertTypeInBRReturnTypes
 }

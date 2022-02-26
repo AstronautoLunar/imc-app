@@ -23,7 +23,7 @@ type TotalTypes =
     | 
     undefined; 
 
-type TypesThemeResult = 
+export type TypesThemeResult = 
     'under-weight'
     |
     'normal'

@@ -3,7 +3,10 @@ import { Text } from 'react-native';
 
 import styles from './styles';
 import { useResult } from '../../contexts/result';
-import { applyHiddenElement } from '../../utils';
+import { 
+    applyHiddenElement,
+    convertTypeUSInBR
+} from '../../utils';
 
 const Result = () => {
     let { 
@@ -25,7 +28,7 @@ const Result = () => {
             { 
                 resultIMC
                 ?
-                `${resultIMC} kg/m2\n(${result.type})`
+                `${resultIMC} kg/m2\n(${convertTypeUSInBR(result.type)})`
                 :
                 "Resultado"
             }
