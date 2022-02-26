@@ -6,6 +6,7 @@ export type ThemeStateContextTypes = {
     backgroundInputs: string;
     colorPlaceholderInputs: string;
     colorIconInputs: string;
+    colorInputText: string;
 }
 
 export type ThemeProviderProps = {

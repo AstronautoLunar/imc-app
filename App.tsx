@@ -14,8 +14,8 @@ import { ThemeProvider } from "./src/contexts/theme";
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <ResultProvider>
+    <ResultProvider>
+      <ThemeProvider>
         <Background>
           <StatusBar style="auto" />
           <Header/>
@@ -28,8 +28,8 @@ export default function App() {
             <Form/>
           </Main>
         </Background>
-      </ResultProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </ResultProvider>
   );
 }
 

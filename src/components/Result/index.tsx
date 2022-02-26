@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Text } from 'react-native';
 
 import styles from './styles';
 import { useResult } from '../../contexts/result';
+import { useTheme } from '../../contexts/theme';
 import { 
     applyHiddenElement,
     convertTypeUSInBR
@@ -14,6 +15,19 @@ const Result = () => {
         hiddenTexts
     } = useResult();
 
+    const { 
+        theme, 
+        applyThemeResult 
+    } = useTheme();
+
+    let { 
+        result: { type }
+    } = useResult();
+
+    useEffect(() => {
+        applyThemeResult(type);
+    }, [ type ]);
+
     const resultIMC = Number(result.total).toFixed(2);
 
     return (
@@ -21,7 +35,8 @@ const Result = () => {
             style={[
                 styles.result,
                 {
-                    display: applyHiddenElement(hiddenTexts)
+                    display: applyHiddenElement(hiddenTexts),
+                    color: theme.colorText
                 }
             ]}
         >

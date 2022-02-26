@@ -16,7 +16,13 @@ import colors from "../styles/colors";
 export const ThemeContext = createContext({} as ThemeProviderValuesTypes);
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-    let [ theme, setTheme ] = useState({} as ThemeStateContextTypes);
+    let [ theme, setTheme ] = useState({
+        backgroundInterface: colors.extra.white,
+        backgroundInputs: colors.extra.gray,
+        colorIconInputs: colors.extra.black,
+        colorPlaceholderInputs: colors.extra.black,
+        colorText: colors.extra.grayDark
+    } as ThemeStateContextTypes);
 
     function applyThemeResult(result: TypesThemeResult) {
         switch(result) {
@@ -26,7 +32,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     backgroundInputs: colors.dark.underWeight,
                     colorIconInputs: colors.light.underWeight,
                     colorPlaceholderInputs: colors.lightAlpha.underWeight,
-                    colorText: colors.dark.underWeight
+                    colorText: colors.dark.underWeight,
+                    colorInputText: colors.light.underWeight
                 });
                 
                 break;
@@ -36,7 +43,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     backgroundInputs: colors.dark.normal,
                     colorIconInputs: colors.light.normal,
                     colorPlaceholderInputs: colors.lightAlpha.normal,
-                    colorText: colors.dark.normal
+                    colorText: colors.dark.normal,
+                    colorInputText: colors.light.normal
                 });
 
                 break;
@@ -46,7 +54,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     backgroundInputs: colors.dark.aboutWeight,
                     colorIconInputs: colors.light.aboutWeight,
                     colorPlaceholderInputs: colors.lightAlpha.aboutWeight,
-                    colorText: colors.dark.aboutWeight
+                    colorText: colors.dark.aboutWeight,
+                    colorInputText: colors.light.aboutWeight
                 });
 
                 break;
@@ -56,7 +65,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     backgroundInputs: colors.dark.obesity,
                     colorIconInputs: colors.light.obesity,
                     colorPlaceholderInputs: colors.lightAlpha.obesity,
-                    colorText: colors.dark.obesity
+                    colorText: colors.dark.obesity,
+                    colorInputText: colors.light.obesity
                 });
 
                 break;
@@ -66,17 +76,19 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     backgroundInputs: colors.dark.severeObesity,
                     colorIconInputs: colors.light.severeObesity,
                     colorPlaceholderInputs: colors.lightAlpha.severeObesity,
-                    colorText: colors.dark.severeObesity
+                    colorText: colors.dark.severeObesity,
+                    colorInputText: colors.light.severeObesity
                 });
 
                 break;
             default:
                 setTheme({
-                    backgroundInterface: colors.extra.grayDark,
+                    backgroundInterface: colors.extra.white,
                     backgroundInputs: colors.extra.gray,
                     colorIconInputs: colors.extra.black,
                     colorPlaceholderInputs: colors.extra.black,
-                    colorText: colors.extra.grayDark
+                    colorText: colors.extra.grayDark,
+                    colorInputText: colors.extra.black
                 });
         }
     }
