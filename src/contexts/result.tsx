@@ -18,10 +18,14 @@ export const ResultProvider = ({ children }: ResultProviderProps) => {
         type: null
     } as ResultStateTypes);
 
+    let [ hiddenTexts, setHiddenTexts ] = useState(false);
+
     return (
         <ResultContext.Provider value={{
             result,
-            setResult
+            setResult,
+            hiddenTexts, 
+            setHiddenTexts
         }}>
             { children }
         </ResultContext.Provider>

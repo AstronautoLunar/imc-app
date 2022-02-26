@@ -1,7 +1,13 @@
 export type ResultValueProvider = {
-    result: ResultStateTypes,
-    setResult: React.Dispatch<React.SetStateAction<ResultStateTypes>>
+    result: ResultStateTypes;
+    setResult: FunctionSetResult;
+    hiddenTexts: boolean;
+    setHiddenTexts: FunctionSetHiddenTexts;
 }
+
+type FunctionSetResult = React.Dispatch<React.SetStateAction<ResultStateTypes>>;
+
+type FunctionSetHiddenTexts = React.Dispatch<React.SetStateAction<boolean>>;
 
 export type ResultStateTypes = {
     total: TotalTypes;

@@ -14,8 +14,8 @@ import { ValueStateInputsTypes } from '../../types/FormTypes';
 
 const Form = () => {
     const {
-        result,
-        setResult
+        setResult,
+        setHiddenTexts
     } = useResult();
 
     const [
@@ -28,10 +28,20 @@ const Form = () => {
 
     function changeInputWeight(entry: string) {
         setValue({ ...value, weight: Number(entry) });
+
     }
 
     function changeInputHeight(entry: string) {
         setValue({ ...value, height: Number(entry)} );
+
+    }
+
+    function showTextsInterface() {
+        setHiddenTexts(false);
+    }
+
+    function hiddenTextsInterface() {
+        setHiddenTexts(true);
     }
 
     function calculateIMC() {
@@ -68,8 +78,9 @@ const Form = () => {
                 total,
                 type: "severe-obesity"
             });
-
         }
+
+        showTextsInterface();
     }
     
     return (
@@ -88,6 +99,7 @@ const Form = () => {
                     placeholder="Peso"
                     keyboardType="numeric"
                     onChangeText={changeInputWeight}
+                    onPressIn={hiddenTextsInterface}
                 />
             </View>
             <View
@@ -104,6 +116,7 @@ const Form = () => {
                     placeholder="Altura"
                     keyboardType="numeric"
                     onChangeText={changeInputHeight}
+                    onPressIn={hiddenTextsInterface}
                 />
             </View>
             <TouchableOpacity

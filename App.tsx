@@ -15,7 +15,6 @@ import {
 } from './src/components';
 import { ResultProvider } from './src/contexts/result';
 
-
 export default function App() {
   return (
       <SafeAreaView style={styles.container}>
