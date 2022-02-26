@@ -9,19 +9,68 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import { colors } from '../../styles/globals';
 import styles from './styles';
-// import { useResult } from '../../contexts/result';
+import { useResult } from '../../contexts/result';
+import { ValueStateInputsTypes } from '../../types/FormTypes';
 
-interface FormProps {
-    changeInputWeight: (entry: string) => void; 
-    changeInputHeight: (entry: string) => void;
-    calculateIMC: () => void;
-}
+const Form = () => {
+    const {
+        result,
+        setResult
+    } = useResult();
 
-const Form = ({ 
-    changeInputWeight, 
-    changeInputHeight, 
-    calculateIMC 
-}: FormProps) => {
+    const [
+        value,
+        setValue
+    ] = useState({
+        weight: 0,
+        height: 0
+    } as ValueStateInputsTypes);
+
+    function changeInputWeight(entry: string) {
+        setValue({ ...value, weight: Number(entry) });
+    }
+
+    function changeInputHeight(entry: string) {
+        setValue({ ...value, height: Number(entry)} );
+    }
+
+    function calculateIMC() {
+        const { height, weight } = value;
+
+        const total = weight / (height * height);
+
+        if(total < 18.5) {
+            setResult({
+                total,
+                type: "under-weight"
+            });
+            
+        } else if(total >= 18.5 && total < 25) {
+            setResult({
+                total,
+                type: "under-weight"
+            });
+            
+        } else if(total >= 25 && total < 30) {
+            setResult({
+                total,
+                type: "normal"
+            });
+            
+        } else if(total >= 30 && total < 35) {
+            setResult({
+                total,
+                type: "obesity"
+            });
+            
+        } else if(total >= 35) {
+            setResult({
+                total,
+                type: "severe-obesity"
+            });
+
+        }
+    }
     
     return (
         <View style={styles.area}>

@@ -1,14 +1,25 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-import { ResultProps } from '../../types';
-
 import styles from './styles';
+import { useResult } from '../../contexts/result';
 
-const Result = ({ children }: ResultProps) => {
+const Result = () => {
+    let { 
+        result
+    } = useResult();
+
+    const resultIMC = Number(result.total).toFixed(2);
+
     return (
         <Text style={styles.result}>
-            { children }
+            { 
+                resultIMC
+                ?
+                `${resultIMC} kg/m2\n(${result.type})`
+                :
+                "Resultado"
+            }
         </Text>
     )
 }
