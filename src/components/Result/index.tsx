@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { View } from 'react-native';
 import * as Animatable from "react-native-animatable";
 
 import styles from './styles';
@@ -32,25 +33,46 @@ const Result = () => {
     const resultIMC = Number(result.total).toFixed(2);
 
     return (
-        <Animatable.Text 
-            transition="color"
-            duration={DURATIONTRANSITIONCOMPONENT}
-            style={[
-                styles.result,
-                {
-                    display: applyHiddenElement(hiddenTexts),
-                    color: theme.colorText
+        <View style={styles.areaText}>
+            <Animatable.Text 
+                transition="color"
+                duration={DURATIONTRANSITIONCOMPONENT}
+                style={[
+                    styles.result,
+                    {
+                        display: applyHiddenElement(hiddenTexts),
+                        color: theme.colorText
+                    }
+                ]}
+            >
+                { 
+                    resultIMC && Number(resultIMC) !== 0
+                    ?
+                    `${resultIMC} kg/m2`
+                    :
+                    "Resultado"
                 }
-            ]}
-        >
-            { 
-                resultIMC && Number(resultIMC) !== 0
-                ?
-                `${resultIMC} kg/m2\n(${convertTypeUSInBR(result.type)})`
-                :
-                "Resultado"
-            }
-        </Animatable.Text>
+            </Animatable.Text>
+            <Animatable.Text 
+                transition="color"
+                duration={DURATIONTRANSITIONCOMPONENT}
+                style={[
+                    styles.resultType,
+                    {
+                        display: applyHiddenElement(hiddenTexts),
+                        color: theme.colorText
+                    }
+                ]}
+            >
+                { 
+                    resultIMC && Number(resultIMC) !== 0
+                    ?
+                    `(${convertTypeUSInBR(result.type)})`
+                    :
+                    ""
+                }
+            </Animatable.Text>
+        </View>
     )
 }
 
