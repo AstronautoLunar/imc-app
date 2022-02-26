@@ -21,7 +21,7 @@ function convertTypeUSInBR(type: TypesThemeResult): ConvertTypeInBRReturnTypes {
             return "obesidade severa";
         
         default:
-            return "tipo indefinido"
+            return "faço a mínima ideia"
     
     }
 }

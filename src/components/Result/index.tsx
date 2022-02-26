@@ -26,7 +26,7 @@ const Result = () => {
             ]}
         >
             { 
-                resultIMC
+                resultIMC && Number(resultIMC) !== 0
                 ?
                 `${resultIMC} kg/m2\n(${convertTypeUSInBR(result.type)})`
                 :

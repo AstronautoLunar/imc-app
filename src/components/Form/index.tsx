@@ -28,12 +28,10 @@ const Form = () => {
 
     function changeInputWeight(entry: string) {
         setValue({ ...value, weight: Number(entry) });
-
     }
 
     function changeInputHeight(entry: string) {
         setValue({ ...value, height: Number(entry)} );
-
     }
 
     function showTextsInterface() {

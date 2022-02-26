@@ -9,4 +9,4 @@ export type ConvertTypeInBRReturnTypes =
     |
     'obesidade severa'
     |
-    'tipo indefinido'
+    'faço a mínima ideia'
