@@ -8,7 +8,9 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: 56
+        paddingBottom: 56,
+        paddingLeft: 56,
+        paddingRight: 56
     },
     areaInput: {
         width: '100%',
