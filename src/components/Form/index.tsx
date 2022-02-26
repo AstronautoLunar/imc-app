@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import { colors } from '../../styles/globals';
+import colors from '../../styles/colors';
 import styles from './styles';
 import { useResult } from '../../contexts/result';
 import { ValueStateInputsTypes } from '../../types/FormTypes';
@@ -56,13 +56,13 @@ const Form = () => {
         } else if(total >= 18.5 && total < 25) {
             setResult({
                 total,
-                type: "under-weight"
+                type: "normal"
             });
             
         } else if(total >= 25 && total < 30) {
             setResult({
                 total,
-                type: "normal"
+                type: "about-weight"
             });
             
         } else if(total >= 30 && total < 35) {

@@ -1,41 +1,39 @@
 import React from "react"
-import { 
-  SafeAreaView, 
+import {
   Switch,
   View
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
-import { styles } from './src/styles/globals';
 import { 
   Title,
   Main,
   Result,
-  Form
+  Form,
+  Background,
+  Header
 } from './src/components';
 import { ResultProvider } from './src/contexts/result';
+import { ThemeProvider } from "./src/contexts/theme";
 
 export default function App() {
   return (
-      <SafeAreaView style={styles.container}>
-        <ResultProvider>
-        <StatusBar style="auto" />
-        <View style={styles.header}>
-          <Switch
-            style={styles.switch}
-          />
-        </View>
-        <Main>
-          <Title>
-            Calculadora IMC
-          </Title>
-          
-          <Result/>
-          <Form/>
-        </Main>
-        </ResultProvider>
-      </SafeAreaView>
-    
+    <ThemeProvider>
+      <ResultProvider>
+        <Background>
+          <StatusBar style="auto" />
+          <Header/>
+          <Main>
+            <Title>
+              Calculadora IMC
+            </Title>
+            
+            <Result/>
+            <Form/>
+          </Main>
+        </Background>
+      </ResultProvider>
+    </ThemeProvider>
   );
 }
 

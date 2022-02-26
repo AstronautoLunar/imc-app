@@ -9,6 +9,12 @@ import {
 } from "./ResultContextTypes";
 import { ValueStateInputsTypes } from "./FormTypes";
 import { ConvertTypeInBRReturnTypes } from "./ConvertTypeInBRTypes";
+import { 
+    ThemeStateContextTypes,
+    ThemeProviderProps,
+    ThemeProviderValuesTypes
+} from "./ThemeContextTypes";
+import BackgroundProps from "./BackgroundTypes";
 
 export {
     TitleProps,
@@ -19,5 +25,9 @@ export {
     ResultValueProvider,
     ValueStateInputsTypes,
     TypesThemeResult,
-    ConvertTypeInBRReturnTypes
+    ConvertTypeInBRReturnTypes,
+    ThemeStateContextTypes,
+    ThemeProviderProps,
+    ThemeProviderValuesTypes,
+    BackgroundProps
 }
