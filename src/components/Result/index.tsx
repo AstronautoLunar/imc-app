@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Text } from 'react-native';
+import * as Animatable from "react-native-animatable";
 
 import styles from './styles';
 import { useResult } from '../../contexts/result';
@@ -8,6 +8,7 @@ import {
     applyHiddenElement,
     convertTypeUSInBR
 } from '../../utils';
+import DURATIONTRANSITIONCOMPONENT from '../../varDeveloper/ValueTransitionDuration';
 
 const Result = () => {
     let { 
@@ -31,7 +32,9 @@ const Result = () => {
     const resultIMC = Number(result.total).toFixed(2);
 
     return (
-        <Text 
+        <Animatable.Text 
+            transition="color"
+            duration={DURATIONTRANSITIONCOMPONENT}
             style={[
                 styles.result,
                 {
@@ -47,7 +50,7 @@ const Result = () => {
                 :
                 "Resultado"
             }
-        </Text>
+        </Animatable.Text>
     )
 }
 

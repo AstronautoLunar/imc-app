@@ -6,12 +6,13 @@ import {
     TouchableOpacity
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import * as Animatable from "react-native-animatable";
 
-import colors from '../../styles/colors';
 import styles from './styles';
 import { useResult } from '../../contexts/result';
 import { useTheme } from '../../contexts/theme';
 import { ValueStateInputsTypes } from '../../types/FormTypes';
+import DURATIONTRANSITIONCOMPONENT from '../../varDeveloper/ValueTransitionDuration';
 
 const Form = () => {
     const {
@@ -100,7 +101,9 @@ const Form = () => {
     
     return (
         <View style={styles.area}>
-            <View
+            <Animatable.View
+                transition="backgroundColor"
+                duration={DURATIONTRANSITIONCOMPONENT}
                 style={[
                     styles.areaInput,
                     {
@@ -127,8 +130,10 @@ const Form = () => {
                     onChangeText={changeInputWeight}
                     onPressIn={hiddenTextsInterface}
                 />
-            </View>
-            <View
+            </Animatable.View>
+            <Animatable.View
+                transition="backgroundColor"
+                duration={DURATIONTRANSITIONCOMPONENT}
                 style={[
                     styles.areaInput,
                     {
@@ -155,7 +160,7 @@ const Form = () => {
                     onChangeText={changeInputHeight}
                     onPressIn={hiddenTextsInterface}
                 />
-            </View>
+            </Animatable.View>
             <TouchableOpacity
                 style={styles.pressAreaButton}
                 onPress={calculateIMC}
