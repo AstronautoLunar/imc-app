@@ -11,12 +11,14 @@ import * as Animatable from "react-native-animatable";
 import styles from './styles';
 import { useResult } from '../../contexts/result';
 import { useTheme } from '../../contexts/theme';
-import { ValueStateInputsTypes } from '../../types/FormTypes';
+import { 
+    ValueStateInputsTypes,
+    CheckKeyInputHeightTypes
+} from '../../types';
 import DURATIONTRANSITIONCOMPONENT from '../../varDeveloper/ValueTransitionDuration';
 
 const Form = () => {
     const {
-        result,
         setResult,
         setHiddenTexts
     } = useResult();
@@ -30,8 +32,8 @@ const Form = () => {
         value,
         setValue
     ] = useState({
-        weight: 0,
-        height: 0
+        weight: "",
+        height: ""
     } as ValueStateInputsTypes);
 
     let { 
@@ -43,11 +45,27 @@ const Form = () => {
     }, [ type ]);
 
     function changeInputWeight(entry: string) {
-        setValue({ ...value, weight: Number(entry) });
+        setValue({ ...value, weight: entry });
     }
 
     function changeInputHeight(entry: string) {
-        setValue({ ...value, height: Number(entry)} );
+        setValue({ ...value, height: entry} );
+    }
+
+    function checkKeyInputHeight({ nativeEvent: { key } }: CheckKeyInputHeightTypes) {
+        const { height } = value;
+
+        let arrayHeight = height.split("");
+        
+        if(arrayHeight.length === 1) {
+            if(key !== "Backspace") {
+                arrayHeight.push(".");
+                
+                const newHeight = arrayHeight.join("");
+
+                setValue({ ...value, height: newHeight});
+            } 
+        }
     }
 
     function showTextsInterface() {
@@ -61,7 +79,10 @@ const Form = () => {
     function calculateIMC() {
         const { height, weight } = value;
 
-        const total = weight / (height * height);
+        let heightNumber = Number(height);
+        let weightNumber = Number(weight);
+
+        const total = weightNumber / (heightNumber * heightNumber);
 
         if(total < 18.5) {
             setResult({
@@ -96,7 +117,6 @@ const Form = () => {
         }
 
         showTextsInterface();
-        
     }
     
     return (
@@ -129,6 +149,7 @@ const Form = () => {
                     keyboardType="numeric"
                     onChangeText={changeInputWeight}
                     onPressIn={hiddenTextsInterface}
+                    value={value.weight}
                 />
             </Animatable.View>
             <Animatable.View
@@ -159,6 +180,8 @@ const Form = () => {
                     keyboardType="numeric"
                     onChangeText={changeInputHeight}
                     onPressIn={hiddenTextsInterface}
+                    onKeyPress={checkKeyInputHeight}
+                    value={value.height}
                 />
             </Animatable.View>
             <TouchableOpacity

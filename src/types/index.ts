@@ -7,7 +7,10 @@ import {
     ResultValueProvider,
     TypesThemeResult
 } from "./ResultContextTypes";
-import { ValueStateInputsTypes } from "./FormTypes";
+import { 
+    ValueStateInputsTypes,
+    CheckKeyInputHeightTypes
+} from "./FormTypes";
 import { ConvertTypeInBRReturnTypes } from "./ConvertTypeInBRTypes";
 import { 
     ThemeStateContextTypes,
@@ -29,5 +32,6 @@ export {
     ThemeStateContextTypes,
     ThemeProviderProps,
     ThemeProviderValuesTypes,
-    BackgroundProps
+    BackgroundProps,
+    CheckKeyInputHeightTypes
 }

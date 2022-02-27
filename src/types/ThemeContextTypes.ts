@@ -1,5 +1,3 @@
-import { TypesThemeResult } from "./ResultContextTypes";
-
 export type ThemeStateContextTypes = {
     colorText: string;
     backgroundInterface: string;
@@ -16,7 +14,20 @@ export type ThemeProviderProps = {
 export type ThemeProviderValuesTypes = {
     theme: ThemeStateContextTypes;
     setTheme: setThemeTypes;
-    applyThemeResult: (result: TypesThemeResult) => void;
+    applyThemeResult: (result: TypesTheme) => void;
 }
+
+export type TypesTheme = 
+    'under-weight'
+    |
+    'normal'
+    |
+    'about-weight'
+    |
+    'obesity'
+    |
+    'severe-obesity'
+    |
+    null;
 
 type setThemeTypes = React.Dispatch<React.SetStateAction<ThemeStateContextTypes>>;

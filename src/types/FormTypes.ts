@@ -1,4 +1,11 @@
+import { 
+    NativeSyntheticEvent, 
+    TextInputKeyPressEventData 
+} from "react-native"
+
 export type ValueStateInputsTypes = {
-    weight: number,
-    height: number
+    weight: string,
+    height: string
 }
+
+export type CheckKeyInputHeightTypes = NativeSyntheticEvent<TextInputKeyPressEventData>

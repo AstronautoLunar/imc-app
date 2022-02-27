@@ -23,6 +23,14 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
         colorPlaceholderInputs: colors.extra.black,
         colorText: colors.extra.grayDark
     } as ThemeStateContextTypes);
+    
+    let [ modeDark, setModeDark ] = useState(false);
+
+    function toggleModeDark() {
+        setModeDark(!modeDark);
+
+        
+    }
 
     function applyThemeResult(result: TypesThemeResult) {
         switch(result) {
