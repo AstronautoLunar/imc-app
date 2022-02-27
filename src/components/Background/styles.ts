@@ -1,6 +1,11 @@
-import { StyleSheet } from "react-native";
+import { 
+    StyleSheet,
+    StatusBar,
+    Platform
+} from "react-native";
 
-import colors from "../../styles/colors";
+const isOSSystemAndroid = Platform.OS === "android";
+const OSVersionAndroid = Platform.Version <= 23;
 
 const styles = StyleSheet.create({
     container: {
@@ -8,6 +13,12 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'flex-start',
         alignItems: 'center',
+        paddingTop: 
+            isOSSystemAndroid && OSVersionAndroid
+            ?
+            StatusBar.currentHeight
+            :
+            0
     },
 });
 
