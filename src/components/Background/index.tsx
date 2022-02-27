@@ -12,13 +12,16 @@ import DURATIONTRANSITIONCOMPONENT from "../../varDeveloper/ValueTransitionDurat
 const Area: any = Animatable.createAnimatableComponent(SafeAreaView);
 
 const Background = ({ children }: BackgroundProps) => {
-    let { theme, applyThemeResult } = useTheme();
+    let { 
+        theme, 
+        applyThemeResultControl 
+    } = useTheme();
     let { 
         result: { type }
     } = useResult();
 
     useEffect(() => {
-        applyThemeResult(type);
+        applyThemeResultControl(type);
     }, [ type ]);
 
     return (

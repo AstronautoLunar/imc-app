@@ -44,6 +44,7 @@ const colors = {
     extra: {
         white: '#ffffff',
         black: '#000000',
+        blackAlpha: '#00000050',
         grayDark: '#4F4F4F',
         gray: '#C4C4C4',
         purpleBlue: '#683DE1'

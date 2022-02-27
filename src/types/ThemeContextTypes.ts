@@ -1,3 +1,5 @@
+import { TypesThemeResult } from "./ResultContextTypes";
+
 export type ThemeStateContextTypes = {
     colorText: string;
     backgroundInterface: string;
@@ -13,21 +15,43 @@ export type ThemeProviderProps = {
 
 export type ThemeProviderValuesTypes = {
     theme: ThemeStateContextTypes;
-    setTheme: setThemeTypes;
-    applyThemeResult: (result: TypesTheme) => void;
+    setTheme: SetThemeTypes;
+    modeDark: boolean;
+    toggleModeDark: () => void;
+    applyThemeResultControl: ApplyThemeFunction;
 }
 
-export type TypesTheme = 
-    'under-weight'
-    |
-    'normal'
-    |
-    'about-weight'
-    |
-    'obesity'
-    |
-    'severe-obesity'
-    |
-    null;
+type ApplyThemeFunction = (result: TypesThemeResult) => void;
 
-type setThemeTypes = React.Dispatch<React.SetStateAction<ThemeStateContextTypes>>;
+// export type TypesTheme = {
+//     light: LightThemeNames;
+//     dark: DarkThemeNames;
+// }
+
+// type LightThemeNames = 
+//     'under-weight-light'
+//     |
+//     'normal-light'
+//     |
+//     'about-weight-light'
+//     |
+//     'obesity-light'
+//     |
+//     'severe-obesity-light'
+//     |
+//     null;
+
+// type DarkThemeNames = 
+//     'under-weight-dark'
+//     |
+//     'normal-dark'
+//     |
+//     'about-weight-dark'
+//     |
+//     'obesity-dark'
+//     |
+//     'severe-obesity-dark'
+//     |
+//     null;
+
+type SetThemeTypes = React.Dispatch<React.SetStateAction<ThemeStateContextTypes>>;

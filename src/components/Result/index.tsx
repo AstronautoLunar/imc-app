@@ -19,7 +19,7 @@ const Result = () => {
 
     const { 
         theme, 
-        applyThemeResult 
+        applyThemeResultControl 
     } = useTheme();
 
     let { 
@@ -27,7 +27,7 @@ const Result = () => {
     } = useResult();
 
     useEffect(() => {
-        applyThemeResult(type);
+        applyThemeResultControl(type);
     }, [ type ]);
 
     const resultIMC = Number(result.total).toFixed(2);

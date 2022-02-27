@@ -24,7 +24,7 @@ const Form = () => {
     } = useResult();
 
     const { 
-        applyThemeResult,
+        applyThemeResultControl,
         theme
     } = useTheme();
 
@@ -41,7 +41,7 @@ const Form = () => {
     } = useResult();
 
     useEffect(() => {
-        applyThemeResult(type);
+        applyThemeResultControl(type);
     }, [ type ]);
 
     function changeInputWeight(entry: string) {

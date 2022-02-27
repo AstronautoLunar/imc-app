@@ -28,11 +28,17 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
     function toggleModeDark() {
         setModeDark(!modeDark);
-
-        
     }
 
-    function applyThemeResult(result: TypesThemeResult) {
+    function applyThemeResultControl(result: TypesThemeResult) {
+        if(modeDark) {
+            applyThemeResultDark(result);
+        } else {
+            applyThemeResultLight(result);
+        }
+    }
+
+    function applyThemeResultLight(result: TypesThemeResult) {
         switch(result) {
             case "under-weight":
                 setTheme({
@@ -101,12 +107,83 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
         }
     }
 
+    function applyThemeResultDark(result: TypesThemeResult) {
+        switch(result) {
+            case "under-weight":
+                setTheme({
+                    backgroundInterface: colors.dark.underWeight,
+                    backgroundInputs: colors.light.underWeight,
+                    colorIconInputs: colors.dark.underWeight,
+                    colorPlaceholderInputs: colors.darkAlpha.underWeight,
+                    colorText: colors.light.underWeight,
+                    colorInputText: colors.dark.underWeight
+                });
+                
+                break;
+            case "normal":
+                setTheme({
+                    backgroundInterface: colors.dark.normal,
+                    backgroundInputs: colors.light.normal,
+                    colorIconInputs: colors.dark.normal,
+                    colorPlaceholderInputs: colors.darkAlpha.normal,
+                    colorText: colors.light.normal,
+                    colorInputText: colors.dark.normal
+                });
+
+                break;
+            case "about-weight":
+                setTheme({
+                    backgroundInterface: colors.dark.aboutWeight,
+                    backgroundInputs: colors.light.aboutWeight,
+                    colorIconInputs: colors.dark.aboutWeight,
+                    colorPlaceholderInputs: colors.darkAlpha.aboutWeight,
+                    colorText: colors.light.aboutWeight,
+                    colorInputText: colors.dark.aboutWeight
+                });
+
+                break;
+            case "obesity":
+                setTheme({
+                    backgroundInterface: colors.dark.obesity,
+                    backgroundInputs: colors.dark.obesity,
+                    colorIconInputs: colors.dark.obesity,
+                    colorPlaceholderInputs: colors.darkAlpha.obesity,
+                    colorText: colors.light.obesity,
+                    colorInputText: colors.dark.obesity
+                });
+
+                break;
+            case "severe-obesity":
+                setTheme({
+                    backgroundInterface: colors.dark.severeObesity,
+                    backgroundInputs: colors.light.severeObesity,
+                    colorIconInputs: colors.dark.severeObesity,
+                    colorPlaceholderInputs: colors.darkAlpha.severeObesity,
+                    colorText: colors.light.severeObesity,
+                    colorInputText: colors.dark.severeObesity
+                });
+
+                break;
+            default:
+                setTheme({
+                    backgroundInterface: colors.extra.black,
+                    backgroundInputs: colors.extra.gray,
+                    colorIconInputs: colors.extra.black,
+                    colorPlaceholderInputs: colors.extra.blackAlpha,
+                    colorText: colors.extra.white,
+                    colorInputText: colors.extra.black
+                });
+        }
+    }
+
     return (
         <ThemeContext.Provider 
             value={{ 
                 theme, 
                 setTheme,
-                applyThemeResult
+                toggleModeDark,
+                modeDark,
+                applyThemeResultControl
             } as ThemeProviderValuesTypes}
         >
             { children }

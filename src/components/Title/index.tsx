@@ -13,7 +13,7 @@ const Title = ({ children }: TitleProps) => {
     const { hiddenTexts } = useResult();
     const { 
         theme, 
-        applyThemeResult 
+        applyThemeResultControl 
     } = useTheme();
 
     let { 
@@ -21,7 +21,7 @@ const Title = ({ children }: TitleProps) => {
     } = useResult();
 
     useEffect(() => {
-        applyThemeResult(type);
+        applyThemeResultControl(type);
     }, [ type ]);
 
     return (
