@@ -30,7 +30,10 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
         setModeDark(!modeDark);
     }
 
-    function applyThemeResultControl(result: TypesThemeResult) {
+    function applyThemeResultControl(
+        result: TypesThemeResult, 
+        modeDark: boolean
+    ) {
         if(modeDark) {
             applyThemeResultDark(result);
         } else {
@@ -100,7 +103,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     backgroundInterface: colors.extra.white,
                     backgroundInputs: colors.extra.gray,
                     colorIconInputs: colors.extra.black,
-                    colorPlaceholderInputs: colors.extra.black,
+                    colorPlaceholderInputs: colors.extra.grayDark,
                     colorText: colors.extra.grayDark,
                     colorInputText: colors.extra.black
                 });

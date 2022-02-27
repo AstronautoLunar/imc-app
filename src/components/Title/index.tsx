@@ -13,7 +13,8 @@ const Title = ({ children }: TitleProps) => {
     const { hiddenTexts } = useResult();
     const { 
         theme, 
-        applyThemeResultControl 
+        applyThemeResultControl,
+        modeDark
     } = useTheme();
 
     let { 
@@ -21,8 +22,11 @@ const Title = ({ children }: TitleProps) => {
     } = useResult();
 
     useEffect(() => {
-        applyThemeResultControl(type);
-    }, [ type ]);
+        applyThemeResultControl(type, modeDark);
+    }, [ 
+        type,
+        modeDark
+    ]);
 
     return (
         <Animatable.Text 

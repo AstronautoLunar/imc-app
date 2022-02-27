@@ -25,7 +25,8 @@ const Form = () => {
 
     const { 
         applyThemeResultControl,
-        theme
+        theme,
+        modeDark
     } = useTheme();
 
     const [
@@ -41,8 +42,11 @@ const Form = () => {
     } = useResult();
 
     useEffect(() => {
-        applyThemeResultControl(type);
-    }, [ type ]);
+        applyThemeResultControl(type, modeDark);
+    }, [ 
+        type,
+        modeDark
+    ]);
 
     function changeInputWeight(entry: string) {
         setValue({ ...value, weight: entry });

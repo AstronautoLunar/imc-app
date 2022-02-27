@@ -21,37 +21,6 @@ export type ThemeProviderValuesTypes = {
     applyThemeResultControl: ApplyThemeFunction;
 }
 
-type ApplyThemeFunction = (result: TypesThemeResult) => void;
-
-// export type TypesTheme = {
-//     light: LightThemeNames;
-//     dark: DarkThemeNames;
-// }
-
-// type LightThemeNames = 
-//     'under-weight-light'
-//     |
-//     'normal-light'
-//     |
-//     'about-weight-light'
-//     |
-//     'obesity-light'
-//     |
-//     'severe-obesity-light'
-//     |
-//     null;
-
-// type DarkThemeNames = 
-//     'under-weight-dark'
-//     |
-//     'normal-dark'
-//     |
-//     'about-weight-dark'
-//     |
-//     'obesity-dark'
-//     |
-//     'severe-obesity-dark'
-//     |
-//     null;
+type ApplyThemeFunction = (result: TypesThemeResult, modeDark: boolean) => void;
 
 type SetThemeTypes = React.Dispatch<React.SetStateAction<ThemeStateContextTypes>>;

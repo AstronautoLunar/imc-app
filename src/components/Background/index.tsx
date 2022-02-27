@@ -14,15 +14,19 @@ const Area: any = Animatable.createAnimatableComponent(SafeAreaView);
 const Background = ({ children }: BackgroundProps) => {
     let { 
         theme, 
-        applyThemeResultControl 
+        applyThemeResultControl,
+        modeDark
     } = useTheme();
     let { 
         result: { type }
     } = useResult();
 
     useEffect(() => {
-        applyThemeResultControl(type);
-    }, [ type ]);
+        applyThemeResultControl(type, modeDark);
+    }, [ 
+        type,
+        modeDark
+    ]);
 
     return (
         <Area 
