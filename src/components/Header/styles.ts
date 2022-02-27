@@ -4,13 +4,15 @@ const styles = StyleSheet.create({
     header: {
         width: "100%",
         padding: 24,
-        justifyContent: 'center',
-        alignItems: 'flex-end'
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        alignItems: 'center'
     },
     switch: {
         transform: [
             { scale: 1.5 }
-        ]
+        ],
+        marginLeft: 16
     }
 });
 

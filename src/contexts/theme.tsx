@@ -21,7 +21,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
         backgroundInputs: colors.extra.gray,
         colorIconInputs: colors.extra.black,
         colorPlaceholderInputs: colors.extra.black,
-        colorText: colors.extra.grayDark
+        colorText: colors.extra.grayDark,
+        colorIconHeader: colors.extra.black
     } as ThemeStateContextTypes);
     
     let [ modeDark, setModeDark ] = useState(false);
@@ -50,7 +51,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorIconInputs: colors.light.underWeight,
                     colorPlaceholderInputs: colors.lightAlpha.underWeight,
                     colorText: colors.dark.underWeight,
-                    colorInputText: colors.light.underWeight
+                    colorInputText: colors.light.underWeight,
+                    colorIconHeader: colors.dark.underWeight
                 });
                 
                 break;
@@ -61,7 +63,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorIconInputs: colors.light.normal,
                     colorPlaceholderInputs: colors.lightAlpha.normal,
                     colorText: colors.dark.normal,
-                    colorInputText: colors.light.normal
+                    colorInputText: colors.light.normal,
+                    colorIconHeader: colors.dark.normal
                 });
 
                 break;
@@ -72,7 +75,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorIconInputs: colors.light.aboutWeight,
                     colorPlaceholderInputs: colors.lightAlpha.aboutWeight,
                     colorText: colors.dark.aboutWeight,
-                    colorInputText: colors.light.aboutWeight
+                    colorInputText: colors.light.aboutWeight,
+                    colorIconHeader: colors.dark.aboutWeight
                 });
 
                 break;
@@ -83,7 +87,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorIconInputs: colors.light.obesity,
                     colorPlaceholderInputs: colors.lightAlpha.obesity,
                     colorText: colors.dark.obesity,
-                    colorInputText: colors.light.obesity
+                    colorInputText: colors.light.obesity,
+                    colorIconHeader: colors.dark.obesity
                 });
 
                 break;
@@ -94,7 +99,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorIconInputs: colors.light.severeObesity,
                     colorPlaceholderInputs: colors.lightAlpha.severeObesity,
                     colorText: colors.dark.severeObesity,
-                    colorInputText: colors.light.severeObesity
+                    colorInputText: colors.light.severeObesity,
+                    colorIconHeader: colors.dark.severeObesity
                 });
 
                 break;
@@ -105,7 +111,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorIconInputs: colors.extra.black,
                     colorPlaceholderInputs: colors.extra.grayDark,
                     colorText: colors.extra.grayDark,
-                    colorInputText: colors.extra.black
+                    colorInputText: colors.extra.black,
+                    colorIconHeader: colors.extra.black
                 });
         }
     }
@@ -119,7 +126,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorIconInputs: colors.dark.underWeight,
                     colorPlaceholderInputs: colors.darkAlpha.underWeight,
                     colorText: colors.light.underWeight,
-                    colorInputText: colors.dark.underWeight
+                    colorInputText: colors.dark.underWeight,
+                    colorIconHeader: colors.light.underWeight
                 });
                 
                 break;
@@ -130,7 +138,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorIconInputs: colors.dark.normal,
                     colorPlaceholderInputs: colors.darkAlpha.normal,
                     colorText: colors.light.normal,
-                    colorInputText: colors.dark.normal
+                    colorInputText: colors.dark.normal,
+                    colorIconHeader: colors.light.normal
                 });
 
                 break;
@@ -141,7 +150,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorIconInputs: colors.dark.aboutWeight,
                     colorPlaceholderInputs: colors.darkAlpha.aboutWeight,
                     colorText: colors.light.aboutWeight,
-                    colorInputText: colors.dark.aboutWeight
+                    colorInputText: colors.dark.aboutWeight,
+                    colorIconHeader: colors.light.aboutWeight
                 });
 
                 break;
@@ -152,7 +162,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorIconInputs: colors.dark.obesity,
                     colorPlaceholderInputs: colors.darkAlpha.obesity,
                     colorText: colors.light.obesity,
-                    colorInputText: colors.dark.obesity
+                    colorInputText: colors.dark.obesity,
+                    colorIconHeader: colors.light.obesity
                 });
 
                 break;
@@ -163,7 +174,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorIconInputs: colors.dark.severeObesity,
                     colorPlaceholderInputs: colors.darkAlpha.severeObesity,
                     colorText: colors.light.severeObesity,
-                    colorInputText: colors.dark.severeObesity
+                    colorInputText: colors.dark.severeObesity,
+                    colorIconHeader: colors.light.severeObesity
                 });
 
                 break;
@@ -174,7 +186,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorIconInputs: colors.extra.black,
                     colorPlaceholderInputs: colors.extra.blackAlpha,
                     colorText: colors.extra.white,
-                    colorInputText: colors.extra.black
+                    colorInputText: colors.extra.black,
+                    colorIconHeader: colors.extra.white
                 });
         }
     }
