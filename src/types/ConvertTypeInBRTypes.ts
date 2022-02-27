@@ -3,7 +3,7 @@ export type ConvertTypeInBRReturnTypes =
     |
     'normal'
     |
-    'sobre peso'
+    'sobrepeso'
     |
     'obesidade'
     |

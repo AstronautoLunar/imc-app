@@ -12,7 +12,7 @@ function convertTypeUSInBR(type: TypesThemeResult): ConvertTypeInBRReturnTypes {
             return "normal";
         
         case "about-weight":
-            return "sobre peso";
+            return "sobrepeso";
         
         case "obesity":
             return "obesidade";

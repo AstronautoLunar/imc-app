@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as Animatable from "react-native-animatable";
+import AsyncStorageLib from '@react-native-async-storage/async-storage';
 
 import styles from './styles';
 import { useResult } from '../../contexts/result';
@@ -43,6 +44,7 @@ const Form = () => {
 
     useEffect(() => {
         applyThemeResultControl(type, modeDark);
+
     }, [ 
         type,
         modeDark
@@ -80,7 +82,7 @@ const Form = () => {
         setHiddenTexts(true);
     }
 
-    function calculateIMC() {
+    async function calculateIMC() {
         const { height, weight } = value;
 
         let heightNumber = Number(height);
@@ -117,12 +119,15 @@ const Form = () => {
                 total,
                 type: "severe-obesity"
             });
-
         }
 
         showTextsInterface();
     }
-    
+
+    async function consoleStorageModeDark() {
+        console.log(await AsyncStorageLib.getItem("@modeDark"));
+    }
+
     return (
         <View style={styles.area}>
             <Animatable.View
@@ -195,6 +200,16 @@ const Form = () => {
                 <View style={styles.button}>
                     <Text style={styles.text}>
                         Calcular
+                    </Text>
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+                style={styles.pressAreaButton}
+                onPress={consoleStorageModeDark}
+            >
+                <View style={styles.button}>
+                    <Text style={styles.text}>
+                        Test Storage
                     </Text>
                 </View>
             </TouchableOpacity>

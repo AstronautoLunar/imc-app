@@ -3,6 +3,7 @@ import {
     createContext,
     useState
 } from "react";
+import AsyncStorageLib from '@react-native-async-storage/async-storage';
 
 import {
     ThemeStateContextTypes,
@@ -27,8 +28,12 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     
     let [ modeDark, setModeDark ] = useState(false);
 
-    function toggleModeDark() {
-        setModeDark(!modeDark);
+    async function toggleModeDark() {
+        const newValue = !modeDark;
+
+        setModeDark(newValue);
+
+        await AsyncStorageLib.setItem("@modeDark", String(newValue));
     }
 
     function applyThemeResultControl(
