@@ -1,5 +1,4 @@
 import React from "react"
-import { StatusBar } from 'expo-status-bar';
 
 import { 
   Title,
@@ -7,7 +6,8 @@ import {
   Result,
   Form,
   Background,
-  Header
+  Header,
+  StatusBarTheme
 } from './src/components';
 import { ResultProvider } from './src/contexts/result';
 import { ThemeProvider } from "./src/contexts/theme";
@@ -17,7 +17,7 @@ export default function App() {
     <ResultProvider>
       <ThemeProvider>
         <Background>
-          <StatusBar style="auto" />
+          <StatusBarTheme/>
           <Header/>
           <Main>
             <Title>

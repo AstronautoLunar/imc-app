@@ -4,6 +4,7 @@ import Result from "./Result";
 import Form from "./Form";
 import Background from "./Background";
 import Header from "./Header";
+import StatusBarTheme from "./StatusBarTheme";
 
 export {
     Title,
@@ -11,5 +12,6 @@ export {
     Result,
     Form,
     Background,
-    Header
+    Header,
+    StatusBarTheme
 }
