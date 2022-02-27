@@ -18,6 +18,8 @@ import {
     ThemeProviderValuesTypes
 } from "./ThemeContextTypes";
 import BackgroundProps from "./BackgroundTypes";
+import ComponentControlModelDarkProps from "./ComponentControlModelDarkTypes";
+import { ButtonProps } from "./ButtonTypes";
 
 export {
     TitleProps,
@@ -33,5 +35,7 @@ export {
     ThemeProviderProps,
     ThemeProviderValuesTypes,
     BackgroundProps,
-    CheckKeyInputHeightTypes
+    CheckKeyInputHeightTypes,
+    ComponentControlModelDarkProps,
+    ButtonProps
 }

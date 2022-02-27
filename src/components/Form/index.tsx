@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import {
     View,
-    Text,
     TextInput,
-    TouchableOpacity
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as Animatable from "react-native-animatable";
-import AsyncStorageLib from '@react-native-async-storage/async-storage';
 
 import styles from './styles';
 import { useResult } from '../../contexts/result';
@@ -17,11 +14,13 @@ import {
     CheckKeyInputHeightTypes
 } from '../../types';
 import DURATIONTRANSITIONCOMPONENT from '../../varDeveloper/ValueTransitionDuration';
+import Button from '../Button';
 
 const Form = () => {
     const {
         setResult,
-        setHiddenTexts
+        setHiddenTexts,
+        hiddenTexts
     } = useResult();
 
     const { 
@@ -124,10 +123,6 @@ const Form = () => {
         showTextsInterface();
     }
 
-    async function consoleStorageModeDark() {
-        console.log(await AsyncStorageLib.getItem("@modeDark"));
-    }
-
     return (
         <View style={styles.area}>
             <Animatable.View
@@ -193,26 +188,23 @@ const Form = () => {
                     value={value.height}
                 />
             </Animatable.View>
-            <TouchableOpacity
-                style={styles.pressAreaButton}
-                onPress={calculateIMC}
-            >
-                <View style={styles.button}>
-                    <Text style={styles.text}>
-                        Calcular
-                    </Text>
-                </View>
-            </TouchableOpacity>
-            <TouchableOpacity
-                style={styles.pressAreaButton}
-                onPress={consoleStorageModeDark}
-            >
-                <View style={styles.button}>
-                    <Text style={styles.text}>
-                        Test Storage
-                    </Text>
-                </View>
-            </TouchableOpacity>
+            <Button
+                text="Calcular"
+                press={calculateIMC}
+                type="primary"
+            />
+            {
+                hiddenTexts
+                &&
+                <Button
+                    text="Mostrar Textos"
+                    press={showTextsInterface}
+                    type="ghost"
+                    style={{
+                        marginTop: 16
+                    }}
+                />
+            }
         </View>
     )
 }

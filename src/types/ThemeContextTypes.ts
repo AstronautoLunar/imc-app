@@ -18,6 +18,7 @@ export type ThemeProviderValuesTypes = {
     theme: ThemeStateContextTypes;
     setTheme: SetThemeTypes;
     modeDark: boolean;
+    setModeDark: SetModeDarkTypes;
     toggleModeDark: () => void;
     applyThemeResultControl: ApplyThemeFunction;
 }
@@ -25,3 +26,5 @@ export type ThemeProviderValuesTypes = {
 type ApplyThemeFunction = (result: TypesThemeResult, modeDark: boolean) => void;
 
 type SetThemeTypes = React.Dispatch<React.SetStateAction<ThemeStateContextTypes>>;
+
+type SetModeDarkTypes = React.Dispatch<React.SetStateAction<boolean>>;

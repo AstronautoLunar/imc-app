@@ -204,6 +204,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                 setTheme,
                 toggleModeDark,
                 modeDark,
+                setModeDark,
                 applyThemeResultControl
             } as ThemeProviderValuesTypes}
         >

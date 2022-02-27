@@ -5,6 +5,7 @@ import Form from "./Form";
 import Background from "./Background";
 import Header from "./Header";
 import StatusBarTheme from "./StatusBarTheme";
+import ComponentControlModelDark from "./ComponentControlModeDark";
 
 export {
     Title,
@@ -13,5 +14,6 @@ export {
     Form,
     Background,
     Header,
-    StatusBarTheme
+    StatusBarTheme,
+    ComponentControlModelDark
 }

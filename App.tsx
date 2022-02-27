@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import AsyncStorageLib from '@react-native-async-storage/async-storage';
+import React from "react";
 
 import { 
   Title,
@@ -8,32 +7,33 @@ import {
   Form,
   Background,
   Header,
-  StatusBarTheme
+  StatusBarTheme,
+  ComponentControlModelDark
 } from './src/components';
-import { ResultProvider } from './src/contexts/result';
-import { ThemeProvider } from "./src/contexts/theme";
-
+import { 
+  ResultProvider
+} from './src/contexts/result';
+import { 
+  ThemeProvider
+} from "./src/contexts/theme";
 
 export default function App() {
-  /**
-   * Aplicando o mudança do tema salvo no app
-   * Através do useEffect
-   */
-
   return (
     <ResultProvider>
       <ThemeProvider>
-        <Background>
-          <StatusBarTheme/>
-          <Header/>
-          <Main>
-            <Title>
-              Calculadora IMC
-            </Title>
-            <Result/>
-            <Form/>
-          </Main>
-        </Background>
+        <ComponentControlModelDark>
+          <Background>
+            <StatusBarTheme/>
+            <Header/>
+            <Main>
+              <Title>
+                Calculadora IMC
+              </Title>
+              <Result/>
+              <Form/>
+            </Main>
+          </Background>
+        </ComponentControlModelDark>
       </ThemeProvider>
     </ResultProvider>
   );

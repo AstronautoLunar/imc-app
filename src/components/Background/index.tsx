@@ -15,7 +15,8 @@ const Background = ({ children }: BackgroundProps) => {
     let { 
         theme, 
         applyThemeResultControl,
-        modeDark
+        modeDark,
+        setModeDark
     } = useTheme();
     let { 
         result: { type }
@@ -23,6 +24,7 @@ const Background = ({ children }: BackgroundProps) => {
 
     useEffect(() => {
         applyThemeResultControl(type, modeDark);
+
     }, [ 
         type,
         modeDark
