@@ -57,7 +57,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorPlaceholderInputs: colors.lightAlpha.underWeight,
                     colorText: colors.dark.underWeight,
                     colorInputText: colors.light.underWeight,
-                    colorIconHeader: colors.dark.underWeight
+                    colorIconHeader: colors.dark.underWeight,
+                    colorBorderButtonGhost: colors.dark.underWeight,
+                    colorTextButtonGhost: colors.dark.underWeight
                 });
                 
                 break;
@@ -69,7 +71,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorPlaceholderInputs: colors.lightAlpha.normal,
                     colorText: colors.dark.normal,
                     colorInputText: colors.light.normal,
-                    colorIconHeader: colors.dark.normal
+                    colorIconHeader: colors.dark.normal,
+                    colorBorderButtonGhost: colors.dark.normal,
+                    colorTextButtonGhost: colors.dark.normal
                 });
 
                 break;
@@ -81,7 +85,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorPlaceholderInputs: colors.lightAlpha.aboutWeight,
                     colorText: colors.dark.aboutWeight,
                     colorInputText: colors.light.aboutWeight,
-                    colorIconHeader: colors.dark.aboutWeight
+                    colorIconHeader: colors.dark.aboutWeight,
+                    colorBorderButtonGhost: colors.dark.aboutWeight,
+                    colorTextButtonGhost: colors.dark.aboutWeight
                 });
 
                 break;
@@ -93,7 +99,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorPlaceholderInputs: colors.lightAlpha.obesity,
                     colorText: colors.dark.obesity,
                     colorInputText: colors.light.obesity,
-                    colorIconHeader: colors.dark.obesity
+                    colorIconHeader: colors.dark.obesity,
+                    colorBorderButtonGhost: colors.dark.obesity,
+                    colorTextButtonGhost: colors.dark.obesity
                 });
 
                 break;
@@ -105,7 +113,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorPlaceholderInputs: colors.lightAlpha.severeObesity,
                     colorText: colors.dark.severeObesity,
                     colorInputText: colors.light.severeObesity,
-                    colorIconHeader: colors.dark.severeObesity
+                    colorIconHeader: colors.dark.severeObesity,
+                    colorBorderButtonGhost: colors.dark.severeObesity,
+                    colorTextButtonGhost: colors.dark.severeObesity
                 });
 
                 break;
@@ -117,7 +127,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorPlaceholderInputs: colors.extra.grayDark,
                     colorText: colors.extra.grayDark,
                     colorInputText: colors.extra.black,
-                    colorIconHeader: colors.extra.black
+                    colorIconHeader: colors.extra.black,
+                    colorBorderButtonGhost: colors.extra.grayDark,
+                    colorTextButtonGhost: colors.extra.grayDark
                 });
         }
     }
@@ -132,7 +144,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorPlaceholderInputs: colors.darkAlpha.underWeight,
                     colorText: colors.light.underWeight,
                     colorInputText: colors.dark.underWeight,
-                    colorIconHeader: colors.light.underWeight
+                    colorIconHeader: colors.light.underWeight,
+                    colorBorderButtonGhost: colors.light.underWeight,
+                    colorTextButtonGhost: colors.light.underWeight
                 });
                 
                 break;
@@ -144,7 +158,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorPlaceholderInputs: colors.darkAlpha.normal,
                     colorText: colors.light.normal,
                     colorInputText: colors.dark.normal,
-                    colorIconHeader: colors.light.normal
+                    colorIconHeader: colors.light.normal,
+                    colorBorderButtonGhost: colors.light.normal,
+                    colorTextButtonGhost: colors.light.normal
                 });
 
                 break;
@@ -156,19 +172,23 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorPlaceholderInputs: colors.darkAlpha.aboutWeight,
                     colorText: colors.light.aboutWeight,
                     colorInputText: colors.dark.aboutWeight,
-                    colorIconHeader: colors.light.aboutWeight
+                    colorIconHeader: colors.light.aboutWeight,
+                    colorBorderButtonGhost: colors.light.aboutWeight,
+                    colorTextButtonGhost: colors.light.aboutWeight
                 });
 
                 break;
             case "obesity":
                 setTheme({
                     backgroundInterface: colors.dark.obesity,
-                    backgroundInputs: colors.dark.obesity,
+                    backgroundInputs: colors.light.obesity,
                     colorIconInputs: colors.dark.obesity,
                     colorPlaceholderInputs: colors.darkAlpha.obesity,
                     colorText: colors.light.obesity,
                     colorInputText: colors.dark.obesity,
-                    colorIconHeader: colors.light.obesity
+                    colorIconHeader: colors.light.obesity,
+                    colorBorderButtonGhost: colors.light.obesity,
+                    colorTextButtonGhost: colors.light.obesity
                 });
 
                 break;
@@ -180,7 +200,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorPlaceholderInputs: colors.darkAlpha.severeObesity,
                     colorText: colors.light.severeObesity,
                     colorInputText: colors.dark.severeObesity,
-                    colorIconHeader: colors.light.severeObesity
+                    colorIconHeader: colors.light.severeObesity,
+                    colorBorderButtonGhost: colors.light.severeObesity,
+                    colorTextButtonGhost: colors.light.severeObesity
                 });
 
                 break;
@@ -192,7 +214,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorPlaceholderInputs: colors.extra.blackAlpha,
                     colorText: colors.extra.white,
                     colorInputText: colors.extra.black,
-                    colorIconHeader: colors.extra.white
+                    colorIconHeader: colors.extra.white,
+                    colorBorderButtonGhost: colors.extra.gray,
+                    colorTextButtonGhost: colors.extra.gray
                 });
         }
     }

@@ -8,6 +8,8 @@ export type ThemeStateContextTypes = {
     colorIconInputs: string;
     colorInputText: string;
     colorIconHeader: string;
+    colorBorderButtonGhost: string;
+    colorTextButtonGhost: string;
 }
 
 export type ThemeProviderProps = {

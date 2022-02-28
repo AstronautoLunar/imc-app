@@ -4,9 +4,12 @@ import {
     Text,
     TouchableOpacity
 } from "react-native";
+import * as Animatable from "react-native-animatable";
 
 import styles from "./style";
 import { ButtonProps } from "../../types";
+import { useTheme } from "../../contexts/theme";
+import DURATIONTRANSITIONCOMPONENT from "../../varDeveloper/ValueTransitionDuration";
 
 const Button = ({
     press,
@@ -14,6 +17,8 @@ const Button = ({
     type,
     style
 }: ButtonProps) => {
+    const { theme } = useTheme();
+
     function selectButtonType() {
         switch(type) {
             default:
@@ -34,18 +39,32 @@ const Button = ({
                 )
             case "ghost":
                 return (
-                    <View style={[ 
-                        styles.button, 
-                        styles.buttonGhost,
-                        style
-                    ]}>
-                        <Text style={[
-                            styles.text,
-                            styles.textGhost
-                        ]}>
+                    <Animatable.View 
+                        transition="borderColor"
+                        duration={DURATIONTRANSITIONCOMPONENT}
+                        style={[ 
+                            styles.button, 
+                            styles.buttonGhost,
+                            style,
+                            {
+                                borderColor: theme.colorBorderButtonGhost
+                            }
+                        ]}
+                    >
+                        <Animatable.Text 
+                            transition="color"
+                            duration={DURATIONTRANSITIONCOMPONENT}
+                            style={[
+                                styles.text,
+                                styles.textGhost,
+                                {
+                                    color: theme.colorTextButtonGhost
+                                }
+                            ]}
+                        >
                             { text }
-                        </Text>
-                    </View>
+                        </Animatable.Text>
+                    </Animatable.View>
                 )
         }
     }

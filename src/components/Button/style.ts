@@ -27,10 +27,10 @@ const styles = StyleSheet.create({
         backgroundColor: "transparent",
         borderWidth: 1,
         borderStyle: 'solid',
-        borderColor: colors.extra.gray
+        // borderColor: colors.extra.gray
     },
     textGhost: {
-        color: colors.extra.gray
+        // color: colors.extra.gray
     }
 });
 
