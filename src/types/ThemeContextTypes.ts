@@ -10,6 +10,8 @@ export type ThemeStateContextTypes = {
     colorIconHeader: string;
     colorBorderButtonGhost: string;
     colorTextButtonGhost: string;
+    colorBackgroundSwitch: string;
+    colorCircleSwitch: string;
 }
 
 export type ThemeProviderProps = {

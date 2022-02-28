@@ -4,7 +4,6 @@ import {
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
-
 import { useTheme } from "../../contexts/theme";
 import styles from "./styles";
 
@@ -37,6 +36,11 @@ const Header = () => {
                 style={styles.switch}
                 value={ modeDark }
                 onValueChange={ toggleModeDark }
+                trackColor={{
+                    false: theme.colorBackgroundSwitch,
+                    true: theme.colorBackgroundSwitch
+                }}
+                thumbColor={theme.colorCircleSwitch}
             />
         </View>
     )

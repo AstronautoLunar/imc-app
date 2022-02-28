@@ -11,6 +11,7 @@ import {
     ThemeProviderValuesTypes,
     TypesThemeResult
 } from "../types";
+import { incrementAlphaInHexColor } from "../utils";
 
 import colors from "../styles/colors";
 
@@ -59,7 +60,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorInputText: colors.light.underWeight,
                     colorIconHeader: colors.dark.underWeight,
                     colorBorderButtonGhost: colors.dark.underWeight,
-                    colorTextButtonGhost: colors.dark.underWeight
+                    colorTextButtonGhost: colors.dark.underWeight,
+                    colorBackgroundSwitch: incrementAlphaInHexColor(colors.dark.underWeight, "50"),
+                    colorCircleSwitch: colors.dark.underWeight
                 });
                 
                 break;
@@ -73,7 +76,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorInputText: colors.light.normal,
                     colorIconHeader: colors.dark.normal,
                     colorBorderButtonGhost: colors.dark.normal,
-                    colorTextButtonGhost: colors.dark.normal
+                    colorTextButtonGhost: colors.dark.normal,
+                    colorBackgroundSwitch: incrementAlphaInHexColor(colors.dark.normal, "50"),
+                    colorCircleSwitch: colors.dark.normal
                 });
 
                 break;
@@ -87,7 +92,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorInputText: colors.light.aboutWeight,
                     colorIconHeader: colors.dark.aboutWeight,
                     colorBorderButtonGhost: colors.dark.aboutWeight,
-                    colorTextButtonGhost: colors.dark.aboutWeight
+                    colorTextButtonGhost: colors.dark.aboutWeight,
+                    colorBackgroundSwitch: incrementAlphaInHexColor(colors.dark.aboutWeight, "50"),
+                    colorCircleSwitch: colors.dark.aboutWeight
                 });
 
                 break;
@@ -101,7 +108,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorInputText: colors.light.obesity,
                     colorIconHeader: colors.dark.obesity,
                     colorBorderButtonGhost: colors.dark.obesity,
-                    colorTextButtonGhost: colors.dark.obesity
+                    colorTextButtonGhost: colors.dark.obesity,
+                    colorBackgroundSwitch: incrementAlphaInHexColor(colors.dark.obesity, "50"),
+                    colorCircleSwitch: colors.dark.obesity
                 });
 
                 break;
@@ -115,7 +124,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorInputText: colors.light.severeObesity,
                     colorIconHeader: colors.dark.severeObesity,
                     colorBorderButtonGhost: colors.dark.severeObesity,
-                    colorTextButtonGhost: colors.dark.severeObesity
+                    colorTextButtonGhost: colors.dark.severeObesity,
+                    colorBackgroundSwitch: incrementAlphaInHexColor(colors.dark.severeObesity, "50"),
+                    colorCircleSwitch: colors.dark.severeObesity
                 });
 
                 break;
@@ -129,7 +140,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorInputText: colors.extra.black,
                     colorIconHeader: colors.extra.black,
                     colorBorderButtonGhost: colors.extra.grayDark,
-                    colorTextButtonGhost: colors.extra.grayDark
+                    colorTextButtonGhost: colors.extra.grayDark,
+                    colorBackgroundSwitch: `${colors.extra.purpleBlue}50`,
+                    colorCircleSwitch: colors.extra.purpleBlue
                 });
         }
     }
@@ -146,7 +159,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorInputText: colors.dark.underWeight,
                     colorIconHeader: colors.light.underWeight,
                     colorBorderButtonGhost: colors.light.underWeight,
-                    colorTextButtonGhost: colors.light.underWeight
+                    colorTextButtonGhost: colors.light.underWeight,
+                    colorBackgroundSwitch: incrementAlphaInHexColor(colors.light.underWeight, "50"),
+                    colorCircleSwitch: colors.light.underWeight
                 });
                 
                 break;
@@ -160,7 +175,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorInputText: colors.dark.normal,
                     colorIconHeader: colors.light.normal,
                     colorBorderButtonGhost: colors.light.normal,
-                    colorTextButtonGhost: colors.light.normal
+                    colorTextButtonGhost: colors.light.normal,
+                    colorBackgroundSwitch: incrementAlphaInHexColor(colors.light.normal, "50"),
+                    colorCircleSwitch: colors.light.normal
                 });
 
                 break;
@@ -174,7 +191,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorInputText: colors.dark.aboutWeight,
                     colorIconHeader: colors.light.aboutWeight,
                     colorBorderButtonGhost: colors.light.aboutWeight,
-                    colorTextButtonGhost: colors.light.aboutWeight
+                    colorTextButtonGhost: colors.light.aboutWeight,
+                    colorBackgroundSwitch: incrementAlphaInHexColor(colors.light.aboutWeight, "50"),
+                    colorCircleSwitch: colors.light.aboutWeight
                 });
 
                 break;
@@ -188,7 +207,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorInputText: colors.dark.obesity,
                     colorIconHeader: colors.light.obesity,
                     colorBorderButtonGhost: colors.light.obesity,
-                    colorTextButtonGhost: colors.light.obesity
+                    colorTextButtonGhost: colors.light.obesity,
+                    colorBackgroundSwitch: incrementAlphaInHexColor(colors.light.obesity, "50"),
+                    colorCircleSwitch: colors.light.obesity
                 });
 
                 break;
@@ -202,7 +223,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorInputText: colors.dark.severeObesity,
                     colorIconHeader: colors.light.severeObesity,
                     colorBorderButtonGhost: colors.light.severeObesity,
-                    colorTextButtonGhost: colors.light.severeObesity
+                    colorTextButtonGhost: colors.light.severeObesity,
+                    colorBackgroundSwitch: incrementAlphaInHexColor(colors.light.severeObesity, "50"),
+                    colorCircleSwitch: colors.light.severeObesity
                 });
 
                 break;
@@ -216,7 +239,9 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
                     colorInputText: colors.extra.black,
                     colorIconHeader: colors.extra.white,
                     colorBorderButtonGhost: colors.extra.gray,
-                    colorTextButtonGhost: colors.extra.gray
+                    colorTextButtonGhost: colors.extra.gray,colorBackgroundSwitch:
+                    `${colors.extra.purpleBlue}50`,
+                    colorCircleSwitch: colors.extra.purpleBlue
                 });
         }
     }
