@@ -16,25 +16,30 @@ import {
 import { 
   ThemeProvider
 } from "./src/contexts/theme";
+import {
+  ErrorInputsProvider
+} from "./src/contexts/errorInputs";
 
 export default function App() {
   return (
     <ResultProvider>
-      <ThemeProvider>
-        <ComponentControlModelDark>
-          <Background>
-            <StatusBarTheme/>
-            <Header/>
-            <Main>
-              <Title>
-                Calculadora IMC
-              </Title>
-              <Result/>
-              <Form/>
-            </Main>
-          </Background>
-        </ComponentControlModelDark>
-      </ThemeProvider>
+      <ErrorInputsProvider>
+        <ThemeProvider>
+          <ComponentControlModelDark>
+            <Background>
+              <StatusBarTheme/>
+              <Header/>
+              <Main>
+                <Title>
+                  Calculadora IMC
+                </Title>
+                <Result/>
+                <Form/>
+              </Main>
+            </Background>
+          </ComponentControlModelDark>
+        </ThemeProvider>
+      </ErrorInputsProvider>
     </ResultProvider>
   );
 }

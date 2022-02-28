@@ -1,26 +1,32 @@
 import { TitleProps } from "./TitleTypes";
 import { MainProps } from "./MainTypes";
 import { ResultProps } from "./ResultComponentTypes";
+import { ConvertTypeInBRReturnTypes } from "./ConvertTypeInBRTypes";
+import BackgroundProps from "./BackgroundTypes";
+import ComponentControlModelDarkProps from "./ComponentControlModelDarkTypes";
+import { ButtonProps } from "./ButtonTypes";
+import { ComponentControlErrorInputsProps } from "./ComponentControlErrorInputs";
+
 import { 
     ResultStateTypes,
     ResultProviderProps,
     ResultValueProvider,
     TypesThemeResult
 } from "./ResultContextTypes";
-import { 
-    ValueStateInputsTypes,
-    CheckKeyInputHeightTypes,
-    ErrorStateInputsTypes
-} from "./FormTypes";
-import { ConvertTypeInBRReturnTypes } from "./ConvertTypeInBRTypes";
+
 import { 
     ThemeStateContextTypes,
     ThemeProviderProps,
     ThemeProviderValuesTypes
 } from "./ThemeContextTypes";
-import BackgroundProps from "./BackgroundTypes";
-import ComponentControlModelDarkProps from "./ComponentControlModelDarkTypes";
-import { ButtonProps } from "./ButtonTypes";
+
+import {
+    ErrorInputsProviderValues,
+    ErrorInputsProviderProps,
+    ValueErrorInputStateTypes,
+    ValueStateInputsTypes,
+    CheckKeyInputHeightTypes
+} from "./ErrorInputsContextTypes";
 
 export {
     TitleProps,
@@ -39,5 +45,8 @@ export {
     CheckKeyInputHeightTypes,
     ComponentControlModelDarkProps,
     ButtonProps,
-    ErrorStateInputsTypes
+    ComponentControlErrorInputsProps,ErrorInputsProviderValues,
+    ErrorInputsProviderProps,
+    ValueErrorInputStateTypes
+    
 }

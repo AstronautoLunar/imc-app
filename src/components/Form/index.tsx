@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {
     View,
     TextInput,
+    Alert
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as Animatable from "react-native-animatable";
@@ -9,10 +10,11 @@ import * as Animatable from "react-native-animatable";
 import styles from './styles';
 import { useResult } from '../../contexts/result';
 import { useTheme } from '../../contexts/theme';
+import { useErrorInputs } from '../../contexts/errorInputs';
 import { 
     ValueStateInputsTypes,
     CheckKeyInputHeightTypes,
-    ErrorStateInputsTypes
+    // ErrorStateInputsTypes
 } from '../../types';
 import DURATIONTRANSITIONCOMPONENT from '../../varDeveloper/ValueTransitionDuration';
 import Button from '../Button';
@@ -30,21 +32,12 @@ const Form = () => {
         modeDark
     } = useTheme();
 
-    const [
-        value,
-        setValue
-    ] = useState({
-        weight: "",
-        height: ""
-    } as ValueStateInputsTypes);
-
-    const [
+    const {
         error,
-        setError
-    ] = useState({
-        weightInput: false,
-        heightInput: false
-    });
+        setError,
+        verifyInputHeight,
+        verifyInputWeight
+    } = useErrorInputs();
 
     let { 
         result: { type }
@@ -58,29 +51,7 @@ const Form = () => {
         modeDark
     ]);
 
-    function changeInputWeight(entry: string) {
-        setValue({ ...value, weight: entry });
-    }
-
-    function changeInputHeight(entry: string) {
-        setValue({ ...value, height: entry} );
-    }
-
-    function checkKeyInputHeight({ nativeEvent: { key } }: CheckKeyInputHeightTypes) {
-        const { height } = value;
-
-        let arrayHeight = height.split("");
-        
-        if(arrayHeight.length === 1) {
-            if(key !== "Backspace") {
-                arrayHeight.push(".");
-                
-                const newHeight = arrayHeight.join("");
-
-                setValue({ ...value, height: newHeight});
-            } 
-        }
-    }
+    
 
     function showTextsInterface() {
         setHiddenTexts(false);
@@ -91,100 +62,84 @@ const Form = () => {
     }
 
     async function calculateIMC() {
-        const { height, weight } = value;
+        // const { height, weight } = value;
 
-        if(!weight) {
-            setError({
-                ...error,
-                weightInput: true
-            });
+        // console.log(error);
 
-            return null;
-        } else {
-            setError({
-                ...error,
-                weightInput: false
-            });
-        }
+        // console.log(`Boolean(height): ${Boolean(height)}`);
+        // console.log(`height: ${height}`);
+        // console.log(`!height: ${!height}`);
 
-        if(!height) {
-            setError({
-                ...error,
-                heightInput: true
-            });
+        // console.log(error);
 
-            return null;
-        } else {
-            setError({
-                ...error,
-                heightInput: false
-            });
-        }
+        // const isErrorHeight = error.heightInput === true;
+        // const isErrorWeight = error.weightInput === true;
 
-        if(!height && !weight) {
-            return null;
-        }
+        // if(isErrorHeight || isErrorWeight) {
+        //     Alert.alert("Não passou");
+        //     return null;
+        // }
 
-        /**
-         * Criando um algoritmo para tratar
-         * inputs vazios
-         */
+        // /**
+        //  * Criando um algoritmo para tratar
+        //  * inputs vazios
+        //  */
 
-        console.log(error);
+        // console.log(error);
 
-        let heightNumber = Number(height);
-        let weightNumber = Number(weight);
+        // let heightNumber = Number(height);
+        // let weightNumber = Number(weight);
 
-        const total = weightNumber / (heightNumber * heightNumber);
+        // const total = weightNumber / (heightNumber * heightNumber);
 
-        const applyResultsType = {
-            "under-weight": () => {
-                if(total < 18.5) {
-                    setResult({
-                        total,
-                        type: "under-weight"
-                    });
-                }
-            },
-            "normal": () => {
-                if(total >= 18.5 && total < 25) {
-                    setResult({
-                        total,
-                        type: "normal"
-                    });
-                }
-            },
-            "about-weight": () => {
-                if(total >= 25 && total < 30) {
-                    setResult({
-                        total,
-                        type: "about-weight"
-                    });
-                }
-            },
-            "obesity": () => {
-                if(total >= 30 && total < 35) {
-                    setResult({
-                        total,
-                        type: "obesity"
-                    });
-                }
-            },
-            "severe-obesity": () => {
-                if(total >= 35) {
-                    setResult({
-                        total,
-                        type: "severe-obesity"
-                    });
-                }
-            }
-        }
+        // const applyResultsType = {
+        //     "under-weight": () => {
+        //         if(total < 18.5) {
+        //             setResult({
+        //                 total,
+        //                 type: "under-weight"
+        //             });
+        //         }
+        //     },
+        //     "normal": () => {
+        //         if(total >= 18.5 && total < 25) {
+        //             setResult({
+        //                 total,
+        //                 type: "normal"
+        //             });
+        //         }
+        //     },
+        //     "about-weight": () => {
+        //         if(total >= 25 && total < 30) {
+        //             setResult({
+        //                 total,
+        //                 type: "about-weight"
+        //             });
+        //         }
+        //     },
+        //     "obesity": () => {
+        //         if(total >= 30 && total < 35) {
+        //             setResult({
+        //                 total,
+        //                 type: "obesity"
+        //             });
+        //         }
+        //     },
+        //     "severe-obesity": () => {
+        //         if(total >= 35) {
+        //             setResult({
+        //                 total,
+        //                 type: "severe-obesity"
+        //             });
+        //         }
+        //     }
+        // }
 
-        applyResultsType["under-weight"]();
-        applyResultsType["normal"]();
-        applyResultsType["about-weight"]();
-        applyResultsType["obesity"]();
-        applyResultsType["severe-obesity"]();
+        // applyResultsType["under-weight"]();
+        // applyResultsType["normal"]();
+        // applyResultsType["about-weight"]();
+        // applyResultsType["obesity"]();
+        // applyResultsType["severe-obesity"]();
 
         showTextsInterface();
     }
@@ -217,9 +172,9 @@ const Form = () => {
                     placeholder="Peso"
                     placeholderTextColor={theme.colorPlaceholderInputs}
                     keyboardType="numeric"
-                    onChangeText={changeInputWeight}
-                    onPressIn={hiddenTextsInterface}
-                    value={value.weight}
+                    // onChangeText={}
+                    // onPressIn={hiddenTextsInterface}
+                    // value={value.weight}
                 />
             </Animatable.View>
             <Animatable.View
@@ -248,10 +203,10 @@ const Form = () => {
                     placeholder="Altura"
                     placeholderTextColor={theme.colorPlaceholderInputs}
                     keyboardType="numeric"
-                    onChangeText={changeInputHeight}
+                    // onChangeText={changeInputHeight}
                     onPressIn={hiddenTextsInterface}
-                    onKeyPress={checkKeyInputHeight}
-                    value={value.height}
+                    // onKeyPress={}
+                    // value={value.height}
                 />
             </Animatable.View>
             <Button
