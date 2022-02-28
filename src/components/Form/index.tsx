@@ -11,7 +11,8 @@ import { useResult } from '../../contexts/result';
 import { useTheme } from '../../contexts/theme';
 import { 
     ValueStateInputsTypes,
-    CheckKeyInputHeightTypes
+    CheckKeyInputHeightTypes,
+    ErrorStateInputsTypes
 } from '../../types';
 import DURATIONTRANSITIONCOMPONENT from '../../varDeveloper/ValueTransitionDuration';
 import Button from '../Button';
@@ -36,6 +37,14 @@ const Form = () => {
         weight: "",
         height: ""
     } as ValueStateInputsTypes);
+
+    const [
+        error,
+        setError
+    ] = useState({
+        weightInput: false,
+        heightInput: false
+    });
 
     let { 
         result: { type }
@@ -84,41 +93,98 @@ const Form = () => {
     async function calculateIMC() {
         const { height, weight } = value;
 
+        if(!weight) {
+            setError({
+                ...error,
+                weightInput: true
+            });
+
+            return null;
+        } else {
+            setError({
+                ...error,
+                weightInput: false
+            });
+        }
+
+        if(!height) {
+            setError({
+                ...error,
+                heightInput: true
+            });
+
+            return null;
+        } else {
+            setError({
+                ...error,
+                heightInput: false
+            });
+        }
+
+        if(!height && !weight) {
+            return null;
+        }
+
+        /**
+         * Criando um algoritmo para tratar
+         * inputs vazios
+         */
+
+        console.log(error);
+
         let heightNumber = Number(height);
         let weightNumber = Number(weight);
 
         const total = weightNumber / (heightNumber * heightNumber);
 
-        if(total < 18.5) {
-            setResult({
-                total,
-                type: "under-weight"
-            });
-
-        } else if(total >= 18.5 && total < 25) {
-            setResult({
-                total,
-                type: "normal"
-            });
-
-        } else if(total >= 25 && total < 30) {
-            setResult({
-                total,
-                type: "about-weight"
-            });
-
-        } else if(total >= 30 && total < 35) {
-            setResult({
-                total,
-                type: "obesity"
-            });
-            
-        } else if(total >= 35) {
-            setResult({
-                total,
-                type: "severe-obesity"
-            });
+        const applyResultsType = {
+            "under-weight": () => {
+                if(total < 18.5) {
+                    setResult({
+                        total,
+                        type: "under-weight"
+                    });
+                }
+            },
+            "normal": () => {
+                if(total >= 18.5 && total < 25) {
+                    setResult({
+                        total,
+                        type: "normal"
+                    });
+                }
+            },
+            "about-weight": () => {
+                if(total >= 25 && total < 30) {
+                    setResult({
+                        total,
+                        type: "about-weight"
+                    });
+                }
+            },
+            "obesity": () => {
+                if(total >= 30 && total < 35) {
+                    setResult({
+                        total,
+                        type: "obesity"
+                    });
+                }
+            },
+            "severe-obesity": () => {
+                if(total >= 35) {
+                    setResult({
+                        total,
+                        type: "severe-obesity"
+                    });
+                }
+            }
         }
+
+        applyResultsType["under-weight"]();
+        applyResultsType["normal"]();
+        applyResultsType["about-weight"]();
+        applyResultsType["obesity"]();
+        applyResultsType["severe-obesity"]();
 
         showTextsInterface();
     }

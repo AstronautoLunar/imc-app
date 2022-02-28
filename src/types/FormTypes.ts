@@ -8,4 +8,9 @@ export type ValueStateInputsTypes = {
     height: string
 }
 
+export type ErrorStateInputsTypes = {
+    weightInput: boolean,
+    heightInput: boolean
+}
+
 export type CheckKeyInputHeightTypes = NativeSyntheticEvent<TextInputKeyPressEventData>

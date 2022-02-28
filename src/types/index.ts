@@ -9,7 +9,8 @@ import {
 } from "./ResultContextTypes";
 import { 
     ValueStateInputsTypes,
-    CheckKeyInputHeightTypes
+    CheckKeyInputHeightTypes,
+    ErrorStateInputsTypes
 } from "./FormTypes";
 import { ConvertTypeInBRReturnTypes } from "./ConvertTypeInBRTypes";
 import { 
@@ -37,5 +38,6 @@ export {
     BackgroundProps,
     CheckKeyInputHeightTypes,
     ComponentControlModelDarkProps,
-    ButtonProps
+    ButtonProps,
+    ErrorStateInputsTypes
 }
