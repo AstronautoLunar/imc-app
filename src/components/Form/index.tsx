@@ -36,7 +36,12 @@ const Form = () => {
         error,
         setError,
         verifyInputHeight,
-        verifyInputWeight
+        verifyInputWeight,
+        checkKeyInputHeight,
+        changeInputHeight,
+        changeInputWeight,
+        value,
+        setValue
     } = useErrorInputs();
 
     let { 
@@ -51,8 +56,6 @@ const Form = () => {
         modeDark
     ]);
 
-    
-
     function showTextsInterface() {
         setHiddenTexts(false);
     }
@@ -61,31 +64,44 @@ const Form = () => {
         setHiddenTexts(true);
     }
 
-    async function calculateIMC() {
-        // const { height, weight } = value;
+    function calculateIMC() {
+        const { height, weight } = value;
 
-        // console.log(error);
+        // verifyInputHeight(height);
+        // verifyInputWeight(weight);
 
-        // console.log(`Boolean(height): ${Boolean(height)}`);
-        // console.log(`height: ${height}`);
-        // console.log(`!height: ${!height}`);
+        
 
-        // console.log(error);
+        if(weight) {
+            setError({
+                // ...error,
+                heightInput: false,
+                weightInput: false
+            });
 
-        // const isErrorHeight = error.heightInput === true;
-        // const isErrorWeight = error.weightInput === true;
+        } else {
+            setError({
+                // ...error,
+                heightInput: true,
+                weightInput: true
+            });
+        }
 
-        // if(isErrorHeight || isErrorWeight) {
-        //     Alert.alert("Não passou");
-        //     return null;
+        // if(height) {
+        //     setError({
+        //         ...error,
+        //         heightInput: false
+        //     });
+
+        // } else {
+        //     setError({
+        //         ...error,
+        //         heightInput: true
+        //     });
         // }
 
-        // /**
-        //  * Criando um algoritmo para tratar
-        //  * inputs vazios
-        //  */
-
-        // console.log(error);
+        console.log(value);
+        console.log(error);
 
         // let heightNumber = Number(height);
         // let weightNumber = Number(weight);
@@ -172,9 +188,9 @@ const Form = () => {
                     placeholder="Peso"
                     placeholderTextColor={theme.colorPlaceholderInputs}
                     keyboardType="numeric"
-                    // onChangeText={}
-                    // onPressIn={hiddenTextsInterface}
-                    // value={value.weight}
+                    onChangeText={changeInputWeight}
+                    onPressIn={hiddenTextsInterface}
+                    value={value.weight}
                 />
             </Animatable.View>
             <Animatable.View
@@ -203,10 +219,10 @@ const Form = () => {
                     placeholder="Altura"
                     placeholderTextColor={theme.colorPlaceholderInputs}
                     keyboardType="numeric"
-                    // onChangeText={changeInputHeight}
+                    onChangeText={changeInputHeight}
                     onPressIn={hiddenTextsInterface}
-                    // onKeyPress={}
-                    // value={value.height}
+                    onKeyPress={checkKeyInputHeight}
+                    value={value.height}
                 />
             </Animatable.View>
             <Button

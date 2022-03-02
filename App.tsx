@@ -8,7 +8,8 @@ import {
   Background,
   Header,
   StatusBarTheme,
-  ComponentControlModelDark
+  ComponentControlModelDark,
+  ComponentControlErrorInputs
 } from './src/components';
 import { 
   ResultProvider
@@ -26,17 +27,19 @@ export default function App() {
       <ErrorInputsProvider>
         <ThemeProvider>
           <ComponentControlModelDark>
-            <Background>
-              <StatusBarTheme/>
-              <Header/>
-              <Main>
-                <Title>
-                  Calculadora IMC
-                </Title>
-                <Result/>
-                <Form/>
-              </Main>
-            </Background>
+            <ComponentControlErrorInputs>
+              <Background>
+                <StatusBarTheme/>
+                <Header/>
+                <Main>
+                  <Title>
+                    Calculadora IMC
+                  </Title>
+                  <Result/>
+                  <Form/>
+                </Main>
+              </Background>
+            </ComponentControlErrorInputs>
           </ComponentControlModelDark>
         </ThemeProvider>
       </ErrorInputsProvider>

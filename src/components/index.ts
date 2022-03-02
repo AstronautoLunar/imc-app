@@ -6,6 +6,7 @@ import Background from "./Background";
 import Header from "./Header";
 import StatusBarTheme from "./StatusBarTheme";
 import ComponentControlModelDark from "./ComponentControlModeDark";
+import ComponentControlErrorInputs from "./ComponentControlErrorInput";
 
 export {
     Title,
@@ -15,5 +16,6 @@ export {
     Background,
     Header,
     StatusBarTheme,
-    ComponentControlModelDark
+    ComponentControlModelDark,
+    ComponentControlErrorInputs
 }

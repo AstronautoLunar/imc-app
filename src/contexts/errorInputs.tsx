@@ -1,10 +1,10 @@
-import { 
-    useContext, 
+import {
+    useContext,
     createContext,
     useState
 } from "react";
 
-import { 
+import {
     ErrorInputsProviderProps,
     ValueErrorInputStateTypes,
     ErrorInputsProviderValues,
@@ -32,33 +32,11 @@ export const ErrorInputsProvider = ({ children }: ErrorInputsProviderProps) => {
     } as ValueStateInputsTypes);
 
     function verifyInputWeight(weight: string): void {
-        if(weight) {
-            setError({
-                ...error,
-                weightInput: false
-            });
-
-        } else {
-            setError({
-                ...error,
-                weightInput: true
-            });
-        }
+        
     }
 
     function verifyInputHeight(height: string): void {
-        if(height) {
-            setError({
-                ...error,
-                heightInput: false
-            });
-
-        } else {
-            setError({
-                ...error,
-                heightInput: true
-            });
-        }
+        
     }
 
     function changeInputWeight(entry: string) {
@@ -66,27 +44,27 @@ export const ErrorInputsProvider = ({ children }: ErrorInputsProviderProps) => {
     }
 
     function changeInputHeight(entry: string) {
-        setValue({ ...value, height: entry} );
+        setValue({ ...value, height: entry });
     }
 
-    // function checkKeyInputHeight({ nativeEvent: { key } }: CheckKeyInputHeightTypes) {
-    //     const { height } = value;
+    function checkKeyInputHeight({ nativeEvent: { key } }: CheckKeyInputHeightTypes) {
+        const { height } = value;
 
-    //     let arrayHeight = height.split("");
-        
-    //     if(arrayHeight.length === 1) {
-    //         if(key !== "Backspace") {
-    //             arrayHeight.push(".");
-                
-    //             const newHeight = arrayHeight.join("");
+        let arrayHeight = height.split("");
 
-    //             setValue({ ...value, height: newHeight});
-    //         } 
-    //     }
-    // }
+        if (arrayHeight.length === 1) {
+            if (key !== "Backspace") {
+                arrayHeight.push(".");
+
+                const newHeight = arrayHeight.join("");
+
+                setValue({ ...value, height: newHeight });
+            }
+        }
+    }
 
     return (
-        <ErrorInputsContext.Provider 
+        <ErrorInputsContext.Provider
             value={{
                 error,
                 setError,
@@ -94,12 +72,12 @@ export const ErrorInputsProvider = ({ children }: ErrorInputsProviderProps) => {
                 verifyInputWeight,
                 changeInputHeight,
                 changeInputWeight,
-                checkKeyInputHeight: undefined,
+                checkKeyInputHeight,
                 value,
                 setValue
             }}
         >
-            { children }
+            {children}
         </ErrorInputsContext.Provider>
     );
 }

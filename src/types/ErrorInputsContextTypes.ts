@@ -12,7 +12,7 @@ export type ErrorInputsProviderValues = {
     setValue: React.Dispatch<React.SetStateAction<ValueStateInputsTypes>>;
     changeInputWeight: ((text: string) => void) | undefined;
     changeInputHeight: ((text: string) => void) | undefined;
-    checkKeyInputHeight: CheckKeyInputHeightTypes;
+    checkKeyInputHeight: FunctionCheckKeyTypes;
 }
 
 type SetErrorInputStateTypes = React.Dispatch<React.SetStateAction<ValueErrorInputStateTypes>>
@@ -31,5 +31,6 @@ export type ErrorInputsProviderProps = {
     children: JSX.Element | JSX.Element[];
 }
 
+export type CheckKeyInputHeightTypes = NativeSyntheticEvent<TextInputKeyPressEventData>
 
-export type CheckKeyInputHeightTypes = ((event: NativeSyntheticEvent<TextInputKeyPressEventData>) => void) | undefined;
+type FunctionCheckKeyTypes = (e: CheckKeyInputHeightTypes) => void
