@@ -7,6 +7,7 @@ import Header from "./Header";
 import StatusBarTheme from "./StatusBarTheme";
 import ComponentControlModelDark from "./ComponentControlModeDark";
 import ComponentControlErrorInputs from "./ComponentControlErrorInput";
+import Button from "./Button";
 
 export {
     Title,
@@ -17,5 +18,6 @@ export {
     Header,
     StatusBarTheme,
     ComponentControlModelDark,
-    ComponentControlErrorInputs
+    ComponentControlErrorInputs,
+    Button
 }

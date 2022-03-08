@@ -70,38 +70,27 @@ const Form = () => {
         // verifyInputHeight(height);
         // verifyInputWeight(weight);
 
-        
+        if(!weight) {
+            error.weightInput = true;
 
-        if(weight) {
-            setError({
-                // ...error,
-                heightInput: false,
-                weightInput: false
-            });
+            setError(error);
 
         } else {
-            setError({
-                // ...error,
-                heightInput: true,
-                weightInput: true
-            });
+            error.weightInput = false;
+
+            setError(error);
         }
 
-        // if(height) {
-        //     setError({
-        //         ...error,
-        //         heightInput: false
-        //     });
+        if(!height) {
+            error.heightInput = true;
 
-        // } else {
-        //     setError({
-        //         ...error,
-        //         heightInput: true
-        //     });
-        // }
+            setError(error);
+            
+        } else {
+            error.heightInput = false;
 
-        console.log(value);
-        console.log(error);
+            setError(error);
+        }
 
         // let heightNumber = Number(height);
         // let weightNumber = Number(weight);
@@ -242,6 +231,14 @@ const Form = () => {
                     }}
                 />
             }
+            <Button
+                type='primary'
+                text="Teste"
+                press={() => {
+                    console.log(value);
+                    console.log(error);
+                }}
+            />
         </View>
     )
 }
