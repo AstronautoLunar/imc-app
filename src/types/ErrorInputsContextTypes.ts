@@ -6,8 +6,8 @@ import {
 export type ErrorInputsProviderValues = {
     error: ValueErrorInputStateTypes;
     setError: SetErrorInputStateTypes;
-    verifyInputWeight: (weight: string) => void;
-    verifyInputHeight: (height: string) => void;
+    verifyInputWeight: () => void;
+    verifyInputHeight: () => void;
     value: ValueStateInputsTypes;
     setValue: React.Dispatch<React.SetStateAction<ValueStateInputsTypes>>;
     changeInputWeight: ((text: string) => void) | undefined;

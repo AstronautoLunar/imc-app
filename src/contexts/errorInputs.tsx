@@ -31,12 +31,34 @@ export const ErrorInputsProvider = ({ children }: ErrorInputsProviderProps) => {
         height: ""
     } as ValueStateInputsTypes);
 
-    function verifyInputWeight(weight: string): void {
-        
+    function verifyInputWeight(): void {
+        const { weight } = value;
+
+        if(!weight) {
+            error.weightInput = true;
+
+            setError(error);
+
+        } else {
+            error.weightInput = false;
+
+            setError(error);
+        }
     }
 
-    function verifyInputHeight(height: string): void {
-        
+    function verifyInputHeight(): void {
+        const { height } = value;
+
+        if(!height) {
+            error.heightInput = true;
+
+            setError(error);
+            
+        } else {
+            error.heightInput = false;
+
+            setError(error);
+        }
     }
 
     function changeInputWeight(entry: string) {

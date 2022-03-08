@@ -67,31 +67,9 @@ const Form = () => {
     function calculateIMC() {
         const { height, weight } = value;
 
-        // verifyInputHeight(height);
-        // verifyInputWeight(weight);
-
-        if(!weight) {
-            error.weightInput = true;
-
-            setError(error);
-
-        } else {
-            error.weightInput = false;
-
-            setError(error);
-        }
-
-        if(!height) {
-            error.heightInput = true;
-
-            setError(error);
-            
-        } else {
-            error.heightInput = false;
-
-            setError(error);
-        }
-
+        verifyInputHeight()
+        verifyInputWeight()
+        
         // let heightNumber = Number(height);
         // let weightNumber = Number(weight);
 
