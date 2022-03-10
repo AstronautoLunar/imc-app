@@ -13,11 +13,7 @@ const Input = ({
     value,
     ...props
 }: InputProps) => {
-    const { 
-        applyThemeResultControl,
-        theme,
-        modeDark
-    } = useTheme();
+    const { theme } = useTheme();
 
     return (
         <Animatable.View

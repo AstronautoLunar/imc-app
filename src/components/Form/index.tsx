@@ -1,21 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import {
-    View,
-    TextInput
-} from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import * as Animatable from "react-native-animatable";
+import React, { useEffect } from 'react';
+import { View } from 'react-native';
 
 import styles from './styles';
 import { useResult } from '../../contexts/result';
 import { useTheme } from '../../contexts/theme';
 import { useErrorInputs } from '../../contexts/errorInputs';
-import { 
-    ValueStateInputsTypes,
-    CheckKeyInputHeightTypes,
-    // ErrorStateInputsTypes
-} from '../../types';
-import DURATIONTRANSITIONCOMPONENT from '../../varDeveloper/ValueTransitionDuration';
 import Button from '../Button';
 import Input from '../Input';
 
@@ -62,6 +51,21 @@ const Form = () => {
 
     function hiddenTextsInterface() {
         setHiddenTexts(true);
+    }
+
+    function renderButtonHiddenText() {
+        return (
+            hiddenTexts
+            &&
+            <Button
+                text="Mostrar Textos"
+                press={showTextsInterface}
+                type="ghost"
+                style={{
+                    marginTop: 16
+                }}
+            />
+        )
     }
 
     function calculateIMC() {
@@ -129,69 +133,6 @@ const Form = () => {
 
     return (
         <View style={styles.area}>
-            {/* <Animatable.View
-                transition="backgroundColor"
-                duration={DURATIONTRANSITIONCOMPONENT}
-                style={[
-                    styles.areaInput,
-                    {
-                        backgroundColor: theme.backgroundInputs
-                    }
-                ]}
-            >
-                <MaterialCommunityIcons
-                    name="weight-kilogram"
-                    size={32}
-                    color={theme.colorIconInputs}
-                    style={styles.icon}
-                />
-                <TextInput
-                    style={[
-                        styles.input,
-                        {
-                            color: theme.colorInputText
-                        }
-                    ]}
-                    placeholder="Peso"
-                    placeholderTextColor={theme.colorPlaceholderInputs}
-                    keyboardType="numeric"
-                    onChangeText={changeInputWeight}
-                    onPressIn={hiddenTextsInterface}
-                    value={value.weight}
-                />
-            </Animatable.View>
-            <Animatable.View
-                transition="backgroundColor"
-                duration={DURATIONTRANSITIONCOMPONENT}
-                style={[
-                    styles.areaInput,
-                    {
-                        backgroundColor: theme.backgroundInputs
-                    }
-                ]}
-            >
-                <MaterialCommunityIcons
-                    name="human-male-height"
-                    size={32}
-                    color={theme.colorIconInputs}
-                    style={styles.icon}
-                />
-                <TextInput
-                    style={[
-                        styles.input,
-                        {
-                            color: theme.colorInputText
-                        }
-                    ]}
-                    placeholder="Altura"
-                    placeholderTextColor={theme.colorPlaceholderInputs}
-                    keyboardType="numeric"
-                    onChangeText={changeInputHeight}
-                    onPressIn={hiddenTextsInterface}
-                    onKeyPress={checkKeyInputHeight}
-                    value={value.height}
-                />
-            </Animatable.View> */}
             <Input
                 placeholder="Peso"
                 value={value.weight}
@@ -213,16 +154,7 @@ const Form = () => {
                 type="primary"
             />
             {
-                hiddenTexts
-                &&
-                <Button
-                    text="Mostrar Textos"
-                    press={showTextsInterface}
-                    type="ghost"
-                    style={{
-                        marginTop: 16
-                    }}
-                />
+                renderButtonHiddenText()
             }
             <Button
                 type='primary'
