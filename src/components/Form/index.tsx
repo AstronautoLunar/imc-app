@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
     View,
-    TextInput,
-    Alert
+    TextInput
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as Animatable from "react-native-animatable";
@@ -18,6 +17,7 @@ import {
 } from '../../types';
 import DURATIONTRANSITIONCOMPONENT from '../../varDeveloper/ValueTransitionDuration';
 import Button from '../Button';
+import Input from '../Input';
 
 const Form = () => {
     const {
@@ -129,7 +129,7 @@ const Form = () => {
 
     return (
         <View style={styles.area}>
-            <Animatable.View
+            {/* <Animatable.View
                 transition="backgroundColor"
                 duration={DURATIONTRANSITIONCOMPONENT}
                 style={[
@@ -191,7 +191,22 @@ const Form = () => {
                     onKeyPress={checkKeyInputHeight}
                     value={value.height}
                 />
-            </Animatable.View>
+            </Animatable.View> */}
+            <Input
+                placeholder="Peso"
+                value={value.weight}
+                nameIcons="weight-kilogram"
+                onChangeText={changeInputWeight}
+                onPressIn={hiddenTextsInterface}
+            />
+            <Input
+                placeholder="Altura"
+                value={value.height}
+                nameIcons="human-male-height"
+                onChangeText={changeInputHeight}
+                onPressIn={hiddenTextsInterface}
+                onKeyPress={checkKeyInputHeight}
+            />
             <Button
                 text="Calcular"
                 press={calculateIMC}

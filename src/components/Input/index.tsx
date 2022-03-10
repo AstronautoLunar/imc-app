@@ -5,26 +5,19 @@ import { TextInput } from "react-native";
 import styles from "./styles";
 import DURATIONTRANSITIONCOMPONENT from "../../varDeveloper/ValueTransitionDuration"
 import { useTheme } from '../../contexts/theme';
-import { useErrorInputs } from '../../contexts/errorInputs';
+import { InputProps } from "../../types";
 
-const Input = () => {
+const Input = ({
+    nameIcons,
+    placeholder,
+    value,
+    ...props
+}: InputProps) => {
     const { 
         applyThemeResultControl,
         theme,
         modeDark
     } = useTheme();
-
-    const {
-        error,
-        setError,
-        verifyInputHeight,
-        verifyInputWeight,
-        checkKeyInputHeight,
-        changeInputHeight,
-        changeInputWeight,
-        value,
-        setValue
-    } = useErrorInputs();
 
     return (
         <Animatable.View
@@ -38,25 +31,26 @@ const Input = () => {
                 ]}
             >
                 <MaterialCommunityIcons
-                    name="weight-kilogram"
+                    name={nameIcons}
                     size={32}
                     color={theme.colorIconInputs}
                     style={styles.icon}
                 />
-                {/* <TextInput
+                <TextInput
                     style={[
                         styles.input,
                         {
                             color: theme.colorInputText
                         }
                     ]}
-                    placeholder="Peso"
+                    placeholder={placeholder}
                     placeholderTextColor={theme.colorPlaceholderInputs}
                     keyboardType="numeric"
-                    onChangeText={changeInputWeight}
-                    onPressIn={hiddenTextsInterface}
-                    value={value.weight}
-                /> */}
+                    value={value}
+                    {...props}
+                />
             </Animatable.View>
     )
 }
+
+export default Input;
