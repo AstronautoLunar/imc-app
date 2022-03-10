@@ -22,7 +22,7 @@ const Form = () => {
     } = useTheme();
 
     const {
-        error,
+        error: { heightError, weightError },
         setError,
         verifyInputHeight,
         verifyInputWeight,
@@ -74,61 +74,76 @@ const Form = () => {
         verifyInputHeight()
         verifyInputWeight()
         
-        // let heightNumber = Number(height);
-        // let weightNumber = Number(weight);
+        if(!heightError && !weightError) {
 
-        // const total = weightNumber / (heightNumber * heightNumber);
-
-        // const applyResultsType = {
-        //     "under-weight": () => {
-        //         if(total < 18.5) {
-        //             setResult({
-        //                 total,
-        //                 type: "under-weight"
-        //             });
-        //         }
-        //     },
-        //     "normal": () => {
-        //         if(total >= 18.5 && total < 25) {
-        //             setResult({
-        //                 total,
-        //                 type: "normal"
-        //             });
-        //         }
-        //     },
-        //     "about-weight": () => {
-        //         if(total >= 25 && total < 30) {
-        //             setResult({
-        //                 total,
-        //                 type: "about-weight"
-        //             });
-        //         }
-        //     },
-        //     "obesity": () => {
-        //         if(total >= 30 && total < 35) {
-        //             setResult({
-        //                 total,
-        //                 type: "obesity"
-        //             });
-        //         }
-        //     },
-        //     "severe-obesity": () => {
-        //         if(total >= 35) {
-        //             setResult({
-        //                 total,
-        //                 type: "severe-obesity"
-        //             });
-        //         }
-        //     }
-        // }
-
-        // applyResultsType["under-weight"]();
-        // applyResultsType["normal"]();
-        // applyResultsType["about-weight"]();
-        // applyResultsType["obesity"]();
-        // applyResultsType["severe-obesity"]();
-
+            // let heightNumber = Number(height);
+            // let weightNumber = Number(weight);
+    
+            // const total = weightNumber / (heightNumber * heightNumber);
+    
+            // const applyResultsType = {
+            //     "under-weight": () => {
+            //         if(total < 18.5) {
+            //             setResult({
+            //                 total,
+            //                 type: "under-weight"
+            //             });
+            //         }
+            //     },
+            //     "normal": () => {
+            //         if(total >= 18.5 && total < 25) {
+            //             setResult({
+            //                 total,
+            //                 type: "normal"
+            //             });
+            //         }
+            //     },
+            //     "about-weight": () => {
+            //         if(total >= 25 && total < 30) {
+            //             setResult({
+            //                 total,
+            //                 type: "about-weight"
+            //             });
+            //         }
+            //     },
+            //     "obesity": () => {
+            //         if(total >= 30 && total < 35) {
+            //             setResult({
+            //                 total,
+            //                 type: "obesity"
+            //             });
+            //         }
+            //     },
+            //     "severe-obesity": () => {
+            //         if(total >= 35) {
+            //             setResult({
+            //                 total,
+            //                 type: "severe-obesity"
+            //             });
+            //         }
+            //     }
+            // }
+    
+            // applyResultsType["under-weight"]();
+            // applyResultsType["normal"]();
+            // applyResultsType["about-weight"]();
+            // applyResultsType["obesity"]();
+            // applyResultsType["severe-obesity"]();
+        }
+        
         showTextsInterface();
+    }
+
+    function applyErrorInputHeight() {
+        if(heightError) {
+            return true;
+        }
+    }
+
+    function applyErrorInputWeight() {
+        if(weightError) {
+            return true;
+        }
     }
 
     return (
@@ -139,7 +154,8 @@ const Form = () => {
                 nameIcons="weight-kilogram"
                 onChangeText={changeInputWeight}
                 onPressIn={hiddenTextsInterface}
-            />
+                isError={applyErrorInputWeight()}
+                />
             <Input
                 placeholder="Altura"
                 value={value.height}
@@ -147,23 +163,14 @@ const Form = () => {
                 onChangeText={changeInputHeight}
                 onPressIn={hiddenTextsInterface}
                 onKeyPress={checkKeyInputHeight}
+                isError={applyErrorInputHeight()}
             />
             <Button
                 text="Calcular"
                 press={calculateIMC}
                 type="primary"
             />
-            {
-                renderButtonHiddenText()
-            }
-            <Button
-                type='primary'
-                text="Teste"
-                press={() => {
-                    console.log(value);
-                    console.log(error);
-                }}
-            />
+            { renderButtonHiddenText() }
         </View>
     )
 }

@@ -6,7 +6,9 @@ import BackgroundProps from "./BackgroundTypes";
 import ComponentControlModelDarkProps from "./ComponentControlModelDarkTypes";
 import { ButtonProps } from "./ButtonTypes";
 import { ComponentControlErrorInputsProps } from "./ComponentControlErrorInputs";
-import InputProps from "./InputTypes";
+import InputProps, { 
+    ErrorTypesFunctionActive
+} from "./InputTypes";
 
 import { 
     ResultStateTypes,
@@ -49,5 +51,6 @@ export {
     ComponentControlErrorInputsProps,ErrorInputsProviderValues,
     ErrorInputsProviderProps,
     ValueErrorInputStateTypes,
-    InputProps
+    InputProps,
+    ErrorTypesFunctionActive
 }

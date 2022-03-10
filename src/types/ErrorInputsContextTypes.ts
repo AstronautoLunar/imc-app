@@ -23,8 +23,8 @@ export type ValueStateInputsTypes = {
 }
 
 export type ValueErrorInputStateTypes = {
-    weightInput: boolean;
-    heightInput: boolean;
+    weightError: boolean;
+    heightError: boolean;
 }
 
 export type ErrorInputsProviderProps = {

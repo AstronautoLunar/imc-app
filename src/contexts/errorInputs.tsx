@@ -19,8 +19,8 @@ export const ErrorInputsProvider = ({ children }: ErrorInputsProviderProps) => {
         error,
         setError
     ] = useState({
-        weightInput: false,
-        heightInput: false
+        weightError: false,
+        heightError: false
     } as ValueErrorInputStateTypes);
 
     const [
@@ -35,12 +35,12 @@ export const ErrorInputsProvider = ({ children }: ErrorInputsProviderProps) => {
         const { weight } = value;
 
         if(!weight) {
-            error.weightInput = true;
+            error.weightError = true;
 
             setError(error);
 
         } else {
-            error.weightInput = false;
+            error.weightError = false;
 
             setError(error);
         }
@@ -50,12 +50,12 @@ export const ErrorInputsProvider = ({ children }: ErrorInputsProviderProps) => {
         const { height } = value;
 
         if(!height) {
-            error.heightInput = true;
+            error.heightError = true;
 
             setError(error);
             
         } else {
-            error.heightInput = false;
+            error.heightError = false;
 
             setError(error);
         }
