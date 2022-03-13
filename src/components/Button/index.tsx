@@ -10,6 +10,12 @@ import styles from "./style";
 import { ButtonProps } from "../../types";
 import { useTheme } from "../../contexts/ThemeContext/theme";
 import DURATIONTRANSITIONCOMPONENT from "../../varDeveloper/ValueTransitionDuration";
+import { 
+    applyStyleViewButtonPrimary,
+    applyStyleTextButtonPrimary,
+    applyStyleViewButtonGhost,
+    applyStyleTextButtonGhost
+} from "./utils";
 
 const Button = ({
     press,
@@ -24,15 +30,8 @@ const Button = ({
             default:
             case "primary":
                 return (
-                    <View style={[ 
-                        styles.button, 
-                        styles.buttonPrimary,
-                        style
-                    ]}>
-                        <Text style={[
-                            styles.text,
-                            styles.textPrimary
-                        ]}>
+                    <View style={applyStyleViewButtonPrimary(style)}>
+                        <Text style={applyStyleTextButtonPrimary()}>
                             { text }
                         </Text>
                     </View>
@@ -42,25 +41,12 @@ const Button = ({
                     <Animatable.View 
                         transition="borderColor"
                         duration={DURATIONTRANSITIONCOMPONENT}
-                        style={[ 
-                            styles.button, 
-                            styles.buttonGhost,
-                            style,
-                            {
-                                borderColor: theme.colorBorderButtonGhost
-                            }
-                        ]}
+                        style={applyStyleViewButtonGhost(style, theme)}
                     >
                         <Animatable.Text 
                             transition="color"
                             duration={DURATIONTRANSITIONCOMPONENT}
-                            style={[
-                                styles.text,
-                                styles.textGhost,
-                                {
-                                    color: theme.colorTextButtonGhost
-                                }
-                            ]}
+                            style={applyStyleTextButtonGhost(theme)}
                         >
                             { text }
                         </Animatable.Text>

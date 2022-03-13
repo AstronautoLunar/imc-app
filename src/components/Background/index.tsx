@@ -3,11 +3,10 @@ import { SafeAreaView } from "react-native";
 import * as Animatable from "react-native-animatable";
 
 import { BackgroundProps } from "../../types";
-import styles from "./styles";
-
 import { useTheme } from "../../contexts/ThemeContext/theme";
 import { useResult } from "../../contexts/result";
 import DURATIONTRANSITIONCOMPONENT from "../../varDeveloper/ValueTransitionDuration";
+import { applyStyleArea } from "./utils";
 
 const Area: any = Animatable.createAnimatableComponent(SafeAreaView);
 
@@ -15,9 +14,9 @@ const Background = ({ children }: BackgroundProps) => {
     let { 
         theme, 
         applyThemeResultControl,
-        modeDark,
-        setModeDark
+        modeDark
     } = useTheme();
+
     let { 
         result: { type }
     } = useResult();
@@ -32,12 +31,7 @@ const Background = ({ children }: BackgroundProps) => {
 
     return (
         <Area 
-            style={[ 
-                styles.container,
-                {
-                    backgroundColor: theme.backgroundInterface
-                }
-            ]}
+            style={applyStyleArea(theme)}
             transition="backgroundColor"
             duration={DURATIONTRANSITIONCOMPONENT}
         >
