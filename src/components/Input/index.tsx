@@ -4,7 +4,7 @@ import { TextInput } from "react-native";
 
 import DURATIONTRANSITIONCOMPONENT from "../../varDeveloper/ValueTransitionDuration"
 import { InputProps } from "../../types";
-import { useTheme } from '../../contexts/theme';
+import { useTheme } from '../../contexts/ThemeContext/theme';
 
 import styles from "./styles";
 import { 

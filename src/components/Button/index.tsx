@@ -8,7 +8,7 @@ import * as Animatable from "react-native-animatable";
 
 import styles from "./style";
 import { ButtonProps } from "../../types";
-import { useTheme } from "../../contexts/theme";
+import { useTheme } from "../../contexts/ThemeContext/theme";
 import DURATIONTRANSITIONCOMPONENT from "../../varDeveloper/ValueTransitionDuration";
 
 const Button = ({

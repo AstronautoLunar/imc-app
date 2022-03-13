@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 
-import { useTheme } from '../../contexts/theme';
+import { useTheme } from '../../contexts/ThemeContext/theme';
 import { useResult } from '../../contexts/result';
 
 const StatusBarTheme = () => {

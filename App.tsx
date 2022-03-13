@@ -1,6 +1,6 @@
 import React from "react";
 
-import { 
+import {
   Title,
   Main,
   Result,
@@ -8,15 +8,14 @@ import {
   Background,
   Header,
   StatusBarTheme,
-  ComponentControlModelDark,
-  ComponentControlErrorInputs
+  ComponentControlModelDark
 } from './src/components';
-import { 
+import {
   ResultProvider
 } from './src/contexts/result';
-import { 
+import {
   ThemeProvider
-} from "./src/contexts/theme";
+} from "./src/contexts/ThemeContext/theme";
 import {
   ErrorInputsProvider
 } from "./src/contexts/errorInputs";
@@ -27,19 +26,17 @@ export default function App() {
       <ErrorInputsProvider>
         <ThemeProvider>
           <ComponentControlModelDark>
-            <ComponentControlErrorInputs>
-              <Background>
-                <StatusBarTheme/>
-                <Header/>
-                <Main>
-                  <Title>
-                    Calculadora IMC
-                  </Title>
-                  <Result/>
-                  <Form/>
-                </Main>
-              </Background>
-            </ComponentControlErrorInputs>
+            <Background>
+              <StatusBarTheme />
+              <Header />
+              <Main>
+                <Title>
+                  Calculadora IMC
+                </Title>
+                <Result />
+                <Form />
+              </Main>
+            </Background>
           </ComponentControlModelDark>
         </ThemeProvider>
       </ErrorInputsProvider>

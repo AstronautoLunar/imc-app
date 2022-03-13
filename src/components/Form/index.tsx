@@ -3,7 +3,7 @@ import { View, Alert } from 'react-native';
 
 import styles from './styles';
 import { useResult } from '../../contexts/result';
-import { useTheme } from '../../contexts/theme';
+import { useTheme } from '../../contexts/ThemeContext/theme';
 import { useErrorInputs } from '../../contexts/errorInputs';
 import Button from '../Button';
 import Input from '../Input';

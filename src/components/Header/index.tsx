@@ -4,7 +4,7 @@ import {
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
-import { useTheme } from "../../contexts/theme";
+import { useTheme } from "../../contexts/ThemeContext/theme";
 import styles from "./styles";
 
 const Header = () => {

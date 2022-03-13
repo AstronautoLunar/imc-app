@@ -5,7 +5,7 @@ import * as Animatable from "react-native-animatable";
 import { BackgroundProps } from "../../types";
 import styles from "./styles";
 
-import { useTheme } from "../../contexts/theme";
+import { useTheme } from "../../contexts/ThemeContext/theme";
 import { useResult } from "../../contexts/result";
 import DURATIONTRANSITIONCOMPONENT from "../../varDeveloper/ValueTransitionDuration";
 

@@ -4,7 +4,7 @@ import * as Animatable from "react-native-animatable";
 
 import styles from './styles';
 import { useResult } from '../../contexts/result';
-import { useTheme } from '../../contexts/theme';
+import { useTheme } from '../../contexts/ThemeContext/theme';
 import { 
     applyHiddenElement,
     convertTypeUSInBR

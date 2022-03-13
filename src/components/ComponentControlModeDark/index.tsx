@@ -4,7 +4,7 @@ import AsyncStorageLib from '@react-native-async-storage/async-storage';
 
 import styles from "./styles";
 import { ComponentControlModelDarkProps } from "../../types";
-import { useTheme } from "../../contexts/theme";
+import { useTheme } from "../../contexts/ThemeContext/theme";
 import { useResult } from "../../contexts/result";
 
 const ComponentControlModelDark = ({ children }: ComponentControlModelDarkProps) => {
