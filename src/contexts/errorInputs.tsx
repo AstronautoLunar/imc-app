@@ -74,27 +74,26 @@ export const ErrorInputsProvider = ({ children }: ErrorInputsProviderProps) => {
 
         let arrayHeight = height.split("");
 
-        // function checkFirstLetterIsNumeric() {
-        //     const listStrings = [
-        //         "1",
-        //         "2",
-        //         "3",
-        //         "4",
-        //         "5",
-        //         "6",
-        //         "7",
-        //         "8",
-        //         "9"
-        //     ];
+        function checkFirstLetterIsNumeric() {
+            const listStrings = [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "Backspace"
+            ];
 
-        //     console.log(listStrings.includes(key));
-        //     console.log(key);
-
-        //     return listStrings.includes(key)
-        // }
+            return listStrings.includes(key);
+        }
 
         if (arrayHeight.length === 1) {
-            if (key !== "Backspace" /*|| checkFirstLetterIsNumeric()*/) {
+            if(checkFirstLetterIsNumeric()) {
                 arrayHeight.push(".");
 
                 const newHeight = arrayHeight.join("");
