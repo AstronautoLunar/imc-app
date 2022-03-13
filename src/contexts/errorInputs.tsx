@@ -31,7 +31,7 @@ export const ErrorInputsProvider = ({ children }: ErrorInputsProviderProps) => {
         height: ""
     } as ValueStateInputsTypes);
 
-    function verifyInputWeight(): void {
+    function applyLogicFeedbackInputWeight(): void {
         const { weight } = value;
 
         if(!weight) {
@@ -46,7 +46,7 @@ export const ErrorInputsProvider = ({ children }: ErrorInputsProviderProps) => {
         }
     }
 
-    function verifyInputHeight(): void {
+    function applyLogicFeedbackInputHeight(): void {
         const { height } = value;
 
         if(!height) {
@@ -74,8 +74,27 @@ export const ErrorInputsProvider = ({ children }: ErrorInputsProviderProps) => {
 
         let arrayHeight = height.split("");
 
+        // function checkFirstLetterIsNumeric() {
+        //     const listStrings = [
+        //         "1",
+        //         "2",
+        //         "3",
+        //         "4",
+        //         "5",
+        //         "6",
+        //         "7",
+        //         "8",
+        //         "9"
+        //     ];
+
+        //     console.log(listStrings.includes(key));
+        //     console.log(key);
+
+        //     return listStrings.includes(key)
+        // }
+
         if (arrayHeight.length === 1) {
-            if (key !== "Backspace") {
+            if (key !== "Backspace" /*|| checkFirstLetterIsNumeric()*/) {
                 arrayHeight.push(".");
 
                 const newHeight = arrayHeight.join("");
@@ -90,8 +109,8 @@ export const ErrorInputsProvider = ({ children }: ErrorInputsProviderProps) => {
             value={{
                 error,
                 setError,
-                verifyInputHeight,
-                verifyInputWeight,
+                applyLogicFeedbackInputHeight,
+                applyLogicFeedbackInputWeight,
                 changeInputHeight,
                 changeInputWeight,
                 checkKeyInputHeight,

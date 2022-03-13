@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View } from 'react-native';
+import { View, Alert } from 'react-native';
 
 import styles from './styles';
 import { useResult } from '../../contexts/result';
@@ -15,7 +15,7 @@ const Form = () => {
         hiddenTexts
     } = useResult();
 
-    const { 
+    const {
         applyThemeResultControl,
         theme,
         modeDark
@@ -24,8 +24,8 @@ const Form = () => {
     const {
         error: { heightError, weightError },
         setError,
-        verifyInputHeight,
-        verifyInputWeight,
+        applyLogicFeedbackInputHeight,
+        applyLogicFeedbackInputWeight,
         checkKeyInputHeight,
         changeInputHeight,
         changeInputWeight,
@@ -33,14 +33,14 @@ const Form = () => {
         setValue
     } = useErrorInputs();
 
-    let { 
+    let {
         result: { type }
     } = useResult();
 
     useEffect(() => {
         applyThemeResultControl(type, modeDark);
 
-    }, [ 
+    }, [
         type,
         modeDark
     ]);
@@ -71,77 +71,76 @@ const Form = () => {
     function calculateIMC() {
         const { height, weight } = value;
 
-        verifyInputHeight()
-        verifyInputWeight()
-        
-        if(!heightError && !weightError) {
+        if (height && weight) {
+            let heightNumber = Number(height);
+            let weightNumber = Number(weight);
 
-            // let heightNumber = Number(height);
-            // let weightNumber = Number(weight);
-    
-            // const total = weightNumber / (heightNumber * heightNumber);
-    
-            // const applyResultsType = {
-            //     "under-weight": () => {
-            //         if(total < 18.5) {
-            //             setResult({
-            //                 total,
-            //                 type: "under-weight"
-            //             });
-            //         }
-            //     },
-            //     "normal": () => {
-            //         if(total >= 18.5 && total < 25) {
-            //             setResult({
-            //                 total,
-            //                 type: "normal"
-            //             });
-            //         }
-            //     },
-            //     "about-weight": () => {
-            //         if(total >= 25 && total < 30) {
-            //             setResult({
-            //                 total,
-            //                 type: "about-weight"
-            //             });
-            //         }
-            //     },
-            //     "obesity": () => {
-            //         if(total >= 30 && total < 35) {
-            //             setResult({
-            //                 total,
-            //                 type: "obesity"
-            //             });
-            //         }
-            //     },
-            //     "severe-obesity": () => {
-            //         if(total >= 35) {
-            //             setResult({
-            //                 total,
-            //                 type: "severe-obesity"
-            //             });
-            //         }
-            //     }
-            // }
-    
-            // applyResultsType["under-weight"]();
-            // applyResultsType["normal"]();
-            // applyResultsType["about-weight"]();
-            // applyResultsType["obesity"]();
-            // applyResultsType["severe-obesity"]();
+            const total = weightNumber / (heightNumber * heightNumber);
+
+            const applyResultsType = {
+                "under-weight": () => {
+                    if(total < 18.5) {
+                        setResult({
+                            total,
+                            type: "under-weight"
+                        });
+                    }
+                },
+                "normal": () => {
+                    if(total >= 18.5 && total < 25) {
+                        setResult({
+                            total,
+                            type: "normal"
+                        });
+                    }
+                },
+                "about-weight": () => {
+                    if(total >= 25 && total < 30) {
+                        setResult({
+                            total,
+                            type: "about-weight"
+                        });
+                    }
+                },
+                "obesity": () => {
+                    if(total >= 30 && total < 35) {
+                        setResult({
+                            total,
+                            type: "obesity"
+                        });
+                    }
+                },
+                "severe-obesity": () => {
+                    if(total >= 35) {
+                        setResult({
+                            total,
+                            type: "severe-obesity"
+                        });
+                    }
+                }
+            }
+
+            applyResultsType["under-weight"]();
+            applyResultsType["normal"]();
+            applyResultsType["about-weight"]();
+            applyResultsType["obesity"]();
+            applyResultsType["severe-obesity"]();
         }
-        
+
+        applyLogicFeedbackInputHeight();
+        applyLogicFeedbackInputWeight();
+
         showTextsInterface();
     }
 
     function applyErrorInputHeight() {
-        if(heightError) {
+        if (heightError) {
             return true;
         }
     }
 
     function applyErrorInputWeight() {
-        if(weightError) {
+        if (weightError) {
             return true;
         }
     }
@@ -155,7 +154,7 @@ const Form = () => {
                 onChangeText={changeInputWeight}
                 onPressIn={hiddenTextsInterface}
                 isError={applyErrorInputWeight()}
-                />
+            />
             <Input
                 placeholder="Altura"
                 value={value.height}
@@ -170,7 +169,7 @@ const Form = () => {
                 press={calculateIMC}
                 type="primary"
             />
-            { renderButtonHiddenText() }
+            {renderButtonHiddenText()}
         </View>
     )
 }
