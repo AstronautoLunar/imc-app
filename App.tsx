@@ -1,20 +1,46 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+
+import {
+  Title,
+  Main,
+  Result,
+  Form,
+  Background,
+  Header,
+  StatusBarTheme,
+  ComponentControlModelDark
+} from './src/components';
+import {
+  ResultProvider
+} from './src/contexts/result';
+import {
+  ThemeProvider
+} from "./src/contexts/ThemeContext/theme";
+import {
+  ErrorInputsProvider
+} from "./src/contexts/errorInputs";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ResultProvider>
+      <ErrorInputsProvider>
+        <ThemeProvider>
+          <ComponentControlModelDark>
+            <Background>
+              <StatusBarTheme />
+              <Header />
+              <Main>
+                <Title>
+                  Calculadora IMC
+                </Title>
+                <Result />
+                <Form />
+              </Main>
+            </Background>
+          </ComponentControlModelDark>
+        </ThemeProvider>
+      </ErrorInputsProvider>
+    </ResultProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
