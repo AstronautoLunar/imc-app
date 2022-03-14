@@ -2,10 +2,13 @@ import {
     View, 
     Switch 
 } from "react-native";
-import { Feather } from "@expo/vector-icons";
 
 import { useTheme } from "../../contexts/ThemeContext/theme";
 import styles from "./styles";
+import { 
+    applyIconModeDark,
+    applyTrackColor
+} from "./utils";
 
 const Header = () => {
     const {
@@ -16,30 +19,12 @@ const Header = () => {
 
     return (
         <View style={styles.header}>
-            {
-                modeDark
-                ?
-                <Feather
-                    name="moon"
-                    color={theme.colorIconHeader}
-                    size={27}
-                />
-                :
-                <Feather
-                    name="sun"
-                    color={theme.colorIconHeader}
-                    size={27}
-                />
-
-            }
+            { applyIconModeDark(modeDark, theme) }
             <Switch
                 style={styles.switch}
-                value={ modeDark }
+                value={modeDark}
                 onValueChange={ toggleModeDark }
-                trackColor={{
-                    false: theme.colorBackgroundSwitch,
-                    true: theme.colorBackgroundSwitch
-                }}
+                trackColor={applyTrackColor(theme)}
                 thumbColor={theme.colorCircleSwitch}
             />
         </View>

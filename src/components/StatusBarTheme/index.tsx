@@ -17,17 +17,13 @@ const StatusBarTheme = () => {
         applyThemeResultControl(type, modeDark);
     }, [ type, modeDark ])
 
+    const applyDarkMode = modeDark ? "light" : "dark"
+
     return (
         <StatusBar
             translucent
             backgroundColor="transparent"
-            style={
-                modeDark
-                ?
-                "light"
-                :
-                "dark"
-            }
+            style={applyDarkMode}
         />
     )
 }

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Alert } from 'react-native';
+import { View } from 'react-native';
 
 import styles from './styles';
 import { useResult } from '../../contexts/result';
@@ -17,20 +17,17 @@ const Form = () => {
 
     const {
         applyThemeResultControl,
-        theme,
         modeDark
     } = useTheme();
 
     const {
         error: { heightError, weightError },
-        setError,
         applyLogicFeedbackInputHeight,
         applyLogicFeedbackInputWeight,
         checkKeyInputHeight,
         changeInputHeight,
         changeInputWeight,
         value,
-        setValue
     } = useErrorInputs();
 
     let {
