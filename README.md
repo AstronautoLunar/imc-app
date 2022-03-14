@@ -1,9 +1,16 @@
 <h1 align="center">Calculadora IMC</h1>
 
 <div align="center">
-  <img src="https://github.com/AstronautoLunar/imc-app/blob/master/presentation.jpg" alt="image"/>
+  <img 
+       src="https://github.com/AstronautoLunar/imc-app/blob/master/assets/icon.png" 
+       alt="image"
+       width="120px"
+       height="120px"
+  />
 </div>
 
+<br/>
+<br/>
 
 <p align="center">Aplicativo usado para calcular o seu Índice de Massa Corporal</p>
 
