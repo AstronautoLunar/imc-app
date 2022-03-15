@@ -9,6 +9,7 @@ import { ComponentControlErrorInputsProps } from "./ComponentControlErrorInputs"
 import InputProps, { 
     ErrorTypesFunctionActive
 } from "./InputTypes";
+import { ReturnApplyPaddingVersionAndroid } from "./HeaderTypes";
 
 import { 
     ResultStateTypes,
@@ -52,5 +53,6 @@ export {
     ErrorInputsProviderProps,
     ValueErrorInputStateTypes,
     InputProps,
-    ErrorTypesFunctionActive
+    ErrorTypesFunctionActive,
+    ReturnApplyPaddingVersionAndroid
 }

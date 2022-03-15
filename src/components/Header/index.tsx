@@ -1,6 +1,7 @@
 import { 
     View, 
-    Switch 
+    Switch,
+    Platform
 } from "react-native";
 
 import { useTheme } from "../../contexts/ThemeContext/theme";
