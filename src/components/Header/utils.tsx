@@ -34,9 +34,10 @@ export function applyTrackColor(theme: ThemeStateContextTypes) {
     }
 }
 
+export const PADDING_OF_OLD_VERSION_OS = 24;
+export const PADDING_OF_MODERN_VERSION_OS = 40;
+
 export function applyPaddingVersionAndroid(): ReturnApplyPaddingVersionAndroid {
-    const PADDING_OF_OLD_VERSION_OS = 24;
-    const PADDING_OF_MODERN_VERSION_OS = 40;
 
     if(Platform.OS === "android") {
         if(Platform.Version < 29) {

@@ -1,4 +1,4 @@
-import { Header } from "../components";
+import Header  from "../components/Header";
 import { render } from "@testing-library/react-native";
 
 test("Cabeçalho renderizado corretamente", () => {
