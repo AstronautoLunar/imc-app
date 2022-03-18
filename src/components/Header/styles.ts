@@ -1,9 +1,14 @@
 import { StyleSheet } from "react-native";
+import { applyPaddingVersionAndroid } from "./utils";
+import { Platform } from "react-native";
 
 const styles = StyleSheet.create({
     header: {
         width: "100%",
-        padding: 24,
+        paddingTop: applyPaddingVersionAndroid(Platform),
+        paddingLeft: 24,
+        paddingRight: 24,
+        paddingBottom: 24,
         flexDirection: 'row',
         justifyContent: 'flex-end',
         alignItems: 'center'

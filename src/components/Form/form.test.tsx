@@ -6,5 +6,5 @@ test(messageTest, () => {
 
     const isPassed = !heightError && !weightError;
 
-    expect(isPassed).toBeTruthy();
+    expect(isPassed).toBeFalsy();
 });

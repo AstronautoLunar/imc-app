@@ -1,6 +1,6 @@
 import { 
     View, 
-    Switch 
+    Switch
 } from "react-native";
 
 import { useTheme } from "../../contexts/ThemeContext/theme";
@@ -23,7 +23,7 @@ const Header = () => {
             <Switch
                 style={styles.switch}
                 value={modeDark}
-                onValueChange={ toggleModeDark }
+                onValueChange={toggleModeDark}
                 trackColor={applyTrackColor(theme)}
                 thumbColor={theme.colorCircleSwitch}
             />
