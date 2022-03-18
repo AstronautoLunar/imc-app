@@ -32,7 +32,6 @@ export const applyStyleViewButtonGhost = (style: StyleProp<ViewStyle>, theme: Th
 export const applyStyleTextButtonGhost = (theme: ThemeStateContextTypes) => {
     return [
         styles.text,
-        styles.textGhost,
         {
             color: theme.colorTextButtonGhost
         }

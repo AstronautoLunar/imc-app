@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     text: {
         fontWeight: 'bold',
         fontSize: 24,
+        textAlign: 'center'
     },
     buttonPrimary: {
         backgroundColor: colors.extra.purpleBlue
@@ -26,11 +27,7 @@ const styles = StyleSheet.create({
     buttonGhost: {
         backgroundColor: "transparent",
         borderWidth: 1,
-        borderStyle: 'solid',
-        // borderColor: colors.extra.gray
-    },
-    textGhost: {
-        // color: colors.extra.gray
+        borderStyle: 'solid'
     }
 });
 
