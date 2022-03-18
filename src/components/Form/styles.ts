@@ -1,7 +1,5 @@
 import { StyleSheet } from 'react-native';
 
-import colors from '../../styles/colors';
-
 const styles = StyleSheet.create({
     area: {
         width: '100%',
@@ -11,6 +9,9 @@ const styles = StyleSheet.create({
         paddingBottom: 56,
         paddingLeft: 56,
         paddingRight: 56
+    },
+    buttonHiddenText: {
+        marginTop: 16
     }
 });
 
