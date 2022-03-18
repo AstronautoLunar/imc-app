@@ -1,14 +1,14 @@
-import Header  from "../components/Header";
-// import { render } from "@testing-library/react-native";
-import renderer from "react-test-renderer";
+import { Platform } from "react-native";
+import { applyPaddingVersionAndroid } from "../components/Header/utils";
 
-// test("Cabeçalho renderizado corretamente", () => {
-//     const { toJSON } = render(<Header/>);
+test("Funcionalidade que adiciona espaçamento acima do cabeçalho da interface", () => {
+    const value = applyPaddingVersionAndroid(Platform);
 
-//     expect(toJSON()).toMatchSnapshot();
-// });
-test("Cabeçalho renderizado corretamente", () => {
-    const HeaderJSON = renderer.create(<Header/>).toJSON();
-
-    expect(HeaderJSON).toMatchSnapshot();
+    if(Platform.OS === "android") {
+        if(Platform.Version < 29) {
+            expect(value).toBe(24);
+        } else {
+            expect(value).toBe(40);
+        }
+    }
 });

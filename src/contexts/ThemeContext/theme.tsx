@@ -6,7 +6,6 @@ import {
 import AsyncStorageLib from '@react-native-async-storage/async-storage';
 
 import {
-    ThemeStateContextTypes,
     ThemeProviderProps,
     ThemeProviderValuesTypes,
     TypesThemeResult
