@@ -74,7 +74,7 @@ export const severeObesityConfigStyleDark = {
 export const defaultConfigStyleDark = {
     backgroundInterface: colors.extra.black,
     backgroundInputs: colors.extra.gray,
-    colorIconInputs: colors.extra.black,
+    colorIconInputs: colors.extra.black, 
     colorPlaceholderInputs: colors.extra.blackAlpha,
     colorText: colors.extra.white,
     colorInputText: colors.extra.black,
