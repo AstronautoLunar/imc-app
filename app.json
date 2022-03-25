@@ -4,16 +4,12 @@
     "slug": "imc",
     "version": "1.0.0",
     "orientation": "portrait",
-    "primaryColor": "#683DE1",
-    "jsEngine": "hermes",
-    "androidStatusBar": {
-      "barStyle": "light-content"
-    },
+    "jsEngine": "jsc",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "cover",
-      "backgroundColor": "#683DE1"
+      "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -32,7 +28,7 @@
       "package": "com.astronautolunar.imc"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.png"
     }
   }
 }
