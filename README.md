@@ -3,7 +3,7 @@
 <div align="center">
   <img 
        src="https://github.com/AstronautoLunar/imc-app/blob/master/assets/icon.png" 
-       alt="image"
+       alt="Icon app"
        width="120px"
        height="120px"
   />
@@ -15,6 +15,7 @@
 <p align="center">Aplicativo usado para calcular o seu Índice de Massa Corporal</p>
 
 * [Sobre](#Sobre)
+* [Apresentação](#apresentacao)
 * [Pre Requisitos](#Pre-requisitos)
 * [Tecnologias](#tecnologias)
 
@@ -44,6 +45,17 @@ no celular
   Criei para desenvolver minhas habilidades e conhecimentos, melhor forma de aprender algo é colocando a mão na massa, e também por puro hobby
 </strong>
   
+## Apresentação
+
+<br/>
+<br/>
+<div align="center">
+  <img
+       src="https://github.com/AstronautoLunar/imc-app/blob/master/presentation.jpg"
+       alt="Home Screen of App"
+       width="400px"
+   />
+</div>
 
 ## Pre Requisitos
 Caso queira contribuir com o repositório, segue ae os passos para testar na sua máquina
