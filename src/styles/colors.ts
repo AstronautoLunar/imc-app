@@ -48,7 +48,7 @@ const colors = {
         grayDark: '#4F4F4F',
         gray: '#C4C4C4',
         purpleBlue: '#683DE1',
-        danger: '# ',
+        danger: '#EE1122',
         dangerAlpha: '#EE112250'
     }
 }

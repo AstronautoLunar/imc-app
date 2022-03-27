@@ -37,13 +37,12 @@ export const ErrorInputsProvider = ({ children }: ErrorInputsProviderProps) => {
         if(!weight) {
             error.weightError = true;
 
-            setError(error);
-
         } else {
             error.weightError = false;
-
-            setError(error);
+        
         }
+        
+        setError(error);
     }
 
     function applyLogicFeedbackInputHeight(): void {
@@ -52,13 +51,12 @@ export const ErrorInputsProvider = ({ children }: ErrorInputsProviderProps) => {
         if(!height) {
             error.heightError = true;
 
-            setError(error);
-            
         } else {
             error.heightError = false;
 
-            setError(error);
         }
+
+        setError(error);
     }
 
     function changeInputWeight(entry: string) {

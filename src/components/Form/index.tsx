@@ -150,7 +150,7 @@ const Form = () => {
                 nameIcons="weight-kilogram"
                 onChangeText={changeInputWeight}
                 onPressIn={hiddenTextsInterface}
-                isError={applyErrorInputWeight()}
+                isError={heightError}
             />
             <Input
                 placeholder="Altura"
@@ -159,7 +159,7 @@ const Form = () => {
                 onChangeText={changeInputHeight}
                 onPressIn={hiddenTextsInterface}
                 onKeyPress={checkKeyInputHeight}
-                isError={applyErrorInputHeight()}
+                isError={weightError}
             />
             <Button
                 text="Calcular"

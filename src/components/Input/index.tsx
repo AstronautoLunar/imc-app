@@ -25,7 +25,7 @@ const Input = ({
     ...props
 }: InputProps) => {
     const { theme } = useTheme();
-
+    
     return (
         <Animatable.View
                 transition={[
