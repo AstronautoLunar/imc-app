@@ -133,7 +133,7 @@ const Form = () => {
     return (
         <View style={styles.area}>
             <Input
-                placeholder="Peso"
+                placeholder="Peso em kg, ex: 50"
                 value={value.weight}
                 nameIcons="weight-kilogram"
                 onChangeText={changeInputWeight}
@@ -141,7 +141,7 @@ const Form = () => {
                 isError={weightError}
             />
             <Input
-                placeholder="Altura"
+                placeholder="Altura em cm, ex: 1.62"
                 value={value.height}
                 nameIcons="human-male-height"
                 onChangeText={changeInputHeight}

@@ -1,15 +1,16 @@
+import BackgroundProps from "./BackgroundTypes";
+import ComponentControlModelDarkProps from "./ComponentControlModelDarkTypes";
+
+import InputProps, { ErrorTypesFunctionActive } from "./InputTypes";
+
 import { TitleProps } from "./TitleTypes";
 import { MainProps } from "./MainTypes";
 import { ResultProps } from "./ResultComponentTypes";
-import { ConvertTypeInBRReturnTypes } from "./ConvertTypeInBRTypes";
-import BackgroundProps from "./BackgroundTypes";
-import ComponentControlModelDarkProps from "./ComponentControlModelDarkTypes";
 import { ButtonProps } from "./ButtonTypes";
+import { ConvertTypeInBRReturnTypes } from "./ConvertTypeInBRTypes";
 import { ComponentControlErrorInputsProps } from "./ComponentControlErrorInputs";
-import InputProps, { 
-    ErrorTypesFunctionActive
-} from "./InputTypes";
 import { ReturnApplyPaddingVersionAndroid } from "./HeaderTypes";
+import { AlertErrorProps } from "./AlertErrorTypes";
 
 import { 
     ResultStateTypes,
@@ -54,5 +55,6 @@ export {
     ValueErrorInputStateTypes,
     InputProps,
     ErrorTypesFunctionActive,
-    ReturnApplyPaddingVersionAndroid
+    ReturnApplyPaddingVersionAndroid,
+    AlertErrorProps
 }
