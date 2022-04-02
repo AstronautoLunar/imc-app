@@ -68,6 +68,9 @@ const Form = () => {
     function calculateIMC() {
         const { height, weight } = value;
 
+        applyLogicFeedbackInputHeight();
+        applyLogicFeedbackInputWeight();
+
         if (height && weight) {
             let heightNumber = Number(height);
             let weightNumber = Number(weight);
@@ -122,10 +125,7 @@ const Form = () => {
             applyResultsType["about-weight"]();
             applyResultsType["obesity"]();
             applyResultsType["severe-obesity"]();
-        }
-
-        applyLogicFeedbackInputHeight();
-        applyLogicFeedbackInputWeight();
+        };
 
         showTextsInterface();
     }

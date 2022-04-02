@@ -10,7 +10,7 @@ const Main = ({ children }: MainProps) => {
         <View style={styles.main}>
             { children }
             <AlertError
-                visible={true}
+                visible={false}
             >
                 Deu pau!!!!
             </AlertError>
