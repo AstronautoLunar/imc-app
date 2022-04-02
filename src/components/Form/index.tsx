@@ -58,7 +58,7 @@ const Form = () => {
                 text="Mostrar Textos"
                 press={showTextsInterface}
                 type="ghost"
-                style={{
+                styleView={{
                     marginTop: 16
                 }}
             />

@@ -1,3 +1,11 @@
+export type OptionsButtontypes = {
+    text: string;
+    color: string;
+    press: () => void;
+}
+
 export type AlertErrorProps = {
-    children: JSX.Element | JSX.Element[];
+    children: string;
+    optionsButton?: OptionsButtontypes;
+    visible: boolean;
 }

@@ -1,14 +1,16 @@
 import { 
     GestureResponderEvent, 
     StyleProp, 
-    ViewStyle 
+    ViewStyle,
+    TextStyle
 } from "react-native";
 
 export type ButtonProps = {
     press: PressTypes;
     text: TextTypes;
     type: TypeButtonTypes;
-    style?: StyleProp<ViewStyle>
+    styleView?: StyleProp<ViewStyle>;
+    styleText?: StyleProp<TextStyle>;
 }
 
 type PressTypes = ((event: GestureResponderEvent) => void) | undefined;

@@ -1,4 +1,4 @@
-import { StyleProp, ViewStyle } from "react-native"
+import { StyleProp, ViewStyle, TextStyle } from "react-native"
 import { ThemeStateContextTypes } from "../../types";
 
 import styles from "./style"
@@ -11,10 +11,11 @@ export const applyStyleViewButtonPrimary = (style: StyleProp<ViewStyle>) => {
     ]
 };
 
-export const applyStyleTextButtonPrimary = () => {
+export const applyStyleTextButtonPrimary = (style: StyleProp<TextStyle>) => {
     return [
         styles.text,
-        styles.textPrimary
+        styles.textPrimary,
+        style
     ]
 };
 
@@ -29,11 +30,12 @@ export const applyStyleViewButtonGhost = (style: StyleProp<ViewStyle>, theme: Th
     ]
 };
 
-export const applyStyleTextButtonGhost = (theme: ThemeStateContextTypes) => {
+export const applyStyleTextButtonGhost = (style: StyleProp<TextStyle>, theme: ThemeStateContextTypes) => {
     return [
         styles.text,
         {
             color: theme.colorTextButtonGhost
-        }
+        },
+        style
     ]
 };

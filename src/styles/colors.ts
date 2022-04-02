@@ -48,8 +48,14 @@ const colors = {
         grayDark: '#4F4F4F',
         gray: '#C4C4C4',
         purpleBlue: '#683DE1',
+        success: '#4AEE11',
+        successAlpha: 'rgba(74, 238, 17, 0.5)',
+        info: '#11D3EE',
+        infoAlpha: 'rgba(17, 211, 238, 0.5)',
+        warning: '#EAEE11',
+        warningAlpha: 'rgba(234, 238, 17, 0.5)',
         danger: '#EE1122',
-        dangerAlpha: '#EE112250'
+        dangerAlpha: 'rgba(238, 17, 34, 0.5)'
     }
 }
 

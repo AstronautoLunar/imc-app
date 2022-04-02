@@ -10,7 +10,11 @@ import { ButtonProps } from "./ButtonTypes";
 import { ConvertTypeInBRReturnTypes } from "./ConvertTypeInBRTypes";
 import { ComponentControlErrorInputsProps } from "./ComponentControlErrorInputs";
 import { ReturnApplyPaddingVersionAndroid } from "./HeaderTypes";
-import { AlertErrorProps } from "./AlertErrorTypes";
+
+import { 
+    AlertErrorProps, 
+    OptionsButtontypes 
+} from "./AlertErrorTypes";
 
 import { 
     ResultStateTypes,
@@ -56,5 +60,6 @@ export {
     InputProps,
     ErrorTypesFunctionActive,
     ReturnApplyPaddingVersionAndroid,
-    AlertErrorProps
+    AlertErrorProps,
+    OptionsButtontypes
 }

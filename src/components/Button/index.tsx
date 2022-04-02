@@ -21,7 +21,8 @@ const Button = ({
     press,
     text,
     type,
-    style
+    styleView,
+    styleText
 }: ButtonProps) => {
     const { theme } = useTheme();
 
@@ -30,8 +31,8 @@ const Button = ({
             default:
             case "primary":
                 return (
-                    <View style={applyStyleViewButtonPrimary(style)}>
-                        <Text style={applyStyleTextButtonPrimary()}>
+                    <View style={applyStyleViewButtonPrimary(styleView)}>
+                        <Text style={applyStyleTextButtonPrimary(styleText)}>
                             { text }
                         </Text>
                     </View>
@@ -41,12 +42,12 @@ const Button = ({
                     <Animatable.View 
                         transition="borderColor"
                         duration={DURATIONTRANSITIONCOMPONENT}
-                        style={applyStyleViewButtonGhost(style, theme)}
+                        style={applyStyleViewButtonGhost(styleView, theme)}
                     >
                         <Animatable.Text 
                             transition="color"
                             duration={DURATIONTRANSITIONCOMPONENT}
-                            style={applyStyleTextButtonGhost(theme)}
+                            style={applyStyleTextButtonGhost(styleText, theme)}
                         >
                             { text }
                         </Animatable.Text>

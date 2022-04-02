@@ -8,6 +8,7 @@ import StatusBarTheme from "./StatusBarTheme";
 import ComponentControlModelDark from "./ComponentControlModeDark";
 import Button from "./Button";
 import Input from "./Input";
+import AlertError from "./AlertError";
 
 export {
     Title,
@@ -19,5 +20,6 @@ export {
     StatusBarTheme,
     ComponentControlModelDark,
     Button,
-    Input
+    Input,
+    AlertError
 }
