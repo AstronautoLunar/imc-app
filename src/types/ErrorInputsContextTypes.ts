@@ -22,9 +22,14 @@ export type ValueStateInputsTypes = {
     height: string
 }
 
+export type ObjectStateErrorInputTypes = {
+    isPassed: boolean;
+    description: string;
+}
+
 export type ValueErrorInputStateTypes = {
-    weightError: boolean;
-    heightError: boolean;
+    weightError: ObjectStateErrorInputTypes;
+    heightError: ObjectStateErrorInputTypes;
 }
 
 export type ErrorInputsProviderProps = {
@@ -32,5 +37,15 @@ export type ErrorInputsProviderProps = {
 }
 
 export type CheckKeyInputHeightTypes = NativeSyntheticEvent<TextInputKeyPressEventData>
+
+// export type StateTypeError = 
+//     "none" | "input-empty" | "letter-input";
+
+export type ReturnVerifyInputErrorChecker = {
+    isPassed: isPassedInputErrorCheckerTypes;
+    description: string;
+}; 
+
+export type isPassedInputErrorCheckerTypes = boolean | null; 
 
 type FunctionCheckKeyTypes = (e: CheckKeyInputHeightTypes) => void

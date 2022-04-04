@@ -10,6 +10,7 @@ import { ButtonProps } from "./ButtonTypes";
 import { ConvertTypeInBRReturnTypes } from "./ConvertTypeInBRTypes";
 import { ComponentControlErrorInputsProps } from "./ComponentControlErrorInputs";
 import { ReturnApplyPaddingVersionAndroid } from "./HeaderTypes";
+import { ReturnVerify } from "./ListPossibleErrorInputTypes";
 
 import { 
     AlertErrorProps, 
@@ -34,7 +35,9 @@ import {
     ErrorInputsProviderProps,
     ValueErrorInputStateTypes,
     ValueStateInputsTypes,
-    CheckKeyInputHeightTypes
+    CheckKeyInputHeightTypes,
+    ReturnVerifyInputErrorChecker,
+    isPassedInputErrorCheckerTypes
 } from "./ErrorInputsContextTypes";
 
 export {
@@ -61,5 +64,8 @@ export {
     ErrorTypesFunctionActive,
     ReturnApplyPaddingVersionAndroid,
     AlertErrorProps,
-    OptionsButtontypes
+    OptionsButtontypes,
+    ReturnVerifyInputErrorChecker,
+    isPassedInputErrorCheckerTypes,
+    ReturnVerify
 }

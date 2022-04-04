@@ -9,18 +9,29 @@ import {
     ValueErrorInputStateTypes,
     ErrorInputsProviderValues,
     ValueStateInputsTypes,
-    CheckKeyInputHeightTypes
+    CheckKeyInputHeightTypes,
 } from "../types";
+
+import { 
+    InInputEmpty, 
+    LetterInInput,
+    ListPossibleErrorInput
+} from "../utils";
 
 export const ErrorInputsContext = createContext({} as ErrorInputsProviderValues);
 
 export const ErrorInputsProvider = ({ children }: ErrorInputsProviderProps) => {
+    const defaultError = {
+        isPassed: false,
+        description: ""
+    }
+
     const [
         error,
         setError
     ] = useState({
-        weightError: false,
-        heightError: false
+        weightError: defaultError,
+        heightError: defaultError
     } as ValueErrorInputStateTypes);
 
     const [
@@ -31,32 +42,40 @@ export const ErrorInputsProvider = ({ children }: ErrorInputsProviderProps) => {
         height: ""
     } as ValueStateInputsTypes);
 
+    // const [
+    //     typeError,
+    //     setTypeError
+    // ] = useState("none" as StateTypeError);
+
+    
     function applyLogicFeedbackInputWeight(): void {
         const { weight } = value;
+        const letterInInput = new LetterInInput(weight);
+        const inInputEmpty = new InInputEmpty(weight);
+        const { verify } = new ListPossibleErrorInput(letterInInput, inInputEmpty);
 
-        if(!weight) {
-            error.weightError = true;
-
-        } else {
-            error.weightError = false;
+        // if(verify().description === "There is no error") {
+        //     error.weightError.isPassed = true;
+            
+        // } else {
+        //     error.weightError = verify();
+        // }
         
-        }
-        
-        setError(error);
+        // setError(error);
     }
 
     function applyLogicFeedbackInputHeight(): void {
         const { height } = value;
 
-        if(!height) {
-            error.heightError = true;
+        // if(!height) {
+        //     error.heightError = true;
 
-        } else {
-            error.heightError = false;
+        // } else {
+        //     error.heightError = false;
 
-        }
+        // }
 
-        setError(error);
+        // setError(error);
     }
 
     function changeInputWeight(entry: string) {
